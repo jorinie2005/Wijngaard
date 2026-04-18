@@ -404,14 +404,53 @@
                     </div>
                 </div>
 
-                <!-- Kaart -->
-                <div class="map-container">
-                    <h3>Vind ons</h3>
-                    <div class="map-placeholder">
-                        <i class="fas fa-map"></i>
-                        <p>Google Maps wordt hier geladen</p>
-                        <small>[NIEUWE INFO: Voeg hier de Google Maps embed code in van het exacte adres]</small>
-                    </div>
+                <!-- Contactformulier -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <h3>Stuur ons een bericht</h3>
+                        <div class="form-group">
+                            <label for="naam">Naam *</label>
+                            <input type="text" id="naam" name="naam" placeholder="Uw volledige naam" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mailadres *</label>
+                            <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefoon">Telefoonnummer</label>
+                            <input type="tel" id="telefoon" name="telefoon" placeholder="06 - XX XX XX XX">
+                        </div>
+                        <div class="form-group">
+                            <label for="onderwerp">Onderwerp *</label>
+                            <select id="onderwerp" name="onderwerp" required>
+                                <option value="">Selecteer een onderwerp</option>
+                                <option value="rondleiding">Rondleiding plannen</option>
+                                <option value="proeverij">Proeverij boeken</option>
+                                <option value="wijnen">Vraag over wijnen</option>
+                                <option value="groep">Groepsbezoek</option>
+                                <option value="anders">Anders</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bericht">Bericht *</label>
+                            <textarea id="bericht" name="bericht" rows="5" placeholder="Uw bericht..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">
+                            <i class="fas fa-paper-plane"></i> Verstuur bericht
+                        </button>
+                        <p class="form-note">* Verplichte velden. Wij reageren binnen 2 werkdagen.</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kaart -->
+            <div class="map-container">
+                <h3>Vind ons</h3>
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                    <p>Google Maps wordt hier geladen</p>
+                    <small>[NIEUWE INFO: Voeg hier de Google Maps embed code in van het exacte adres]</small>
+                </div>
             </div>
         </div>
     </section>
