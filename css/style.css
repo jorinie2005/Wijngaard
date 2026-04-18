@@ -1008,10 +1008,12 @@ em {
 }
 
 /* ================================
-   KAART
+   GOOGLE MAPS - RESPONSIVE FIX
 ================================ */
 .map-container {
-    margin-top: 2rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
 }
 
 .map-container h3 {
@@ -1019,20 +1021,47 @@ em {
     margin-bottom: 1.5rem;
     text-align: center;
 }
-.map-container iframe {
+
+/* Wrapper om de iframe heen */
+.map-wrapper {
+    position: relative;
     width: 100%;
-    height: 450px;
+    padding-bottom: 45%; /* Verhouding van de kaart */
+    height: 0;
+    overflow: hidden;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
-    display: block;
-    /* iPhone fix */
-    pointer-events: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
+.map-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: var(--border-radius);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .map-wrapper {
+        padding-bottom: 55%;
+    }
+}
+
+/* iPhone / Mobiel */
 @media (max-width: 768px) {
-    .map-container iframe {
-        height: 280px;
+    .map-wrapper {
+        padding-bottom: 75%;
+        border-radius: var(--border-radius);
+    }
+}
+
+/* Kleine iPhone (SE) */
+@media (max-width: 390px) {
+    .map-wrapper {
+        padding-bottom: 90%;
     }
 }
 
