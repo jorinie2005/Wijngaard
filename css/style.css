@@ -1492,3 +1492,39 @@ em {
     font-size: 4rem;
     color: var(--gold);
 }
+
+/* ================================
+   RESPECT GEBRUIKERSINSTELLINGEN
+================================ */
+
+/* Als gebruiker minder animaties wil
+   of apparaat is traag */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Op mobiel minder animaties */
+@media (max-width: 768px) {
+    .fade-in {
+        transition-duration: 0.3s; /* Korter op mobiel */
+    }
+
+    /* Geen delays op mobiel */
+    .process-card,
+    .wine-card,
+    .info-card {
+        transition-delay: 0ms !important;
+    }
+}
