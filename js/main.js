@@ -70,20 +70,21 @@ function updateActiveLink() {
    SCROLL ANIMATIES
 ================================ */
 const observerOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.1,          /* Eerder starten */
+    rootMargin: '0px 0px -30px 0px'  /* Minder wachten */
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            /* Geen delay meer via JS */
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Voeg animatie klassen toe aan elementen
+/* Voeg animaties toe aan elementen */
 document.addEventListener('DOMContentLoaded', () => {
     const animateElements = document.querySelectorAll(`
         .process-card,
@@ -97,9 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .intro-item
     `);
 
-    animateElements.forEach((el, index) => {
+    animateElements.forEach((el) => {
         el.classList.add('fade-in');
-        el.style.transitionDelay = `${index * 0.08}s`;
+        /* Verwijder de index * 0.08s delay */
+        /* Delay wordt nu via CSS gedaan */
         observer.observe(el);
     });
 });
