@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De Wijngaard – Wittemer Wijngaard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            src: url('../fonts/playfair-display-v40-latin-italic.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            src: url('../fonts/lato-v25-latin-300.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/lato-v25-latin-regular.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../fonts/lato-v25-latin-700.woff2') format('woff2');
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVIGATIE -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <div class="logo-img-wrapper">
+                    <img src="../images/logo.png" alt="Wittemer Wijngaard logo" class="logo-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback" style="display:none;">
+                        <span class="logo-icon">🍷</span>
+                        <span class="logo-text">Wittemer Wijngaard</span>
+                    </div>
+                </div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="over-ons.html" class="nav-link">Over Ons</a></li>
+                <li><a href="wijngaard.html" class="nav-link active">De Wijngaard</a></li>
+                <li><a href="wijnen.html" class="nav-link">Onze Wijnen</a></li>
+                <li><a href="bezoek.html" class="nav-link">Bezoek</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGINA HEADER -->
+    <div class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="section-label light">Van druif tot fles</span>
+            <h1>De Wijngaard</h1>
+        </div>
+    </div>
+
+    <!-- DE LOCATIE -->
+    <section class="section">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-text">
+                    <span class="section-label">De locatie</span>
+                    <h2 class="section-title">Het Gulpdal in Zuid-Limburg</h2>
+                    <p>
+                        Onze wijngaard ligt op de zuidelijke hellingen van het Gulpdal,
+                        een van de mooiste en meest karakteristieke dalen van Zuid-Limburg.
+                        De combinatie van een gunstige helling, een rijke leembodem en een
+                        uniek microklimaat maakt deze plek ideaal voor de druiventeelt.
+                    </p>
+                    <p>
+                        De hellingen vangen het zonlicht optimaal op, waardoor de druiven
+                        langzaam en gelijkmatig kunnen rijpen. De beschutte ligging in het dal
+                        beschermt de wijnstokken tegen harde winden en zorgt voor een stabiel
+                        en mild klimaat.
+                    </p>
+                    <p>
+                        [NIEUWE INFO NODIG: Voeg hier de exacte oppervlakte in hectare toe,
+                        de hoogte boven zeeniveau en andere specifieke locatiegegevens.]
+                    </p>
+                </div>
+                <div class="section-image">
+                    <img src="../images/locatie.jpg" alt="Locatie wijngaard" class="content-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-image\'></i><p>Foto locatie<br><small>images/locatie.jpg</small></p></div>'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DRUIVENRASSEN -->
+    <section class="section section-warm">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Onze druiven</span>
+                <h2 class="section-title">Druivenrassen</h2>
+                <p class="section-intro">
+                    Wij telen verschillende druivenrassen die elk hun eigen karakter
+                    meegeven aan onze wijnen.
+                </p>
+            </div>
+            <div class="druiven-grid">
+                <div class="druif-card">
+                    <div class="druif-icon">🍇</div>
+                    <h3>Pinot Noir</h3>
+                    <p>
+                        Een van de meest veeleisende maar ook meest belonende druivenrassen.
+                        Op onze hellingen rijpt de Pinot Noir langzaam en ontwikkelt hij
+                        een complex smaakprofiel met tonen van rood fruit en subtiele kruiden.
+                    </p>
+                    <span class="druif-type rood">Rode wijn</span>
+                </div>
+                <div class="druif-card">
+                    <div class="druif-icon">🍇</div>
+                    <h3>Chardonnay</h3>
+                    <p>
+                        De Chardonnay gedijt uitstekend op onze kalkrijke leembodem.
+                        Hij geeft frisse, elegante witte wijnen met aroma's van appel,
+                        peer en een lichte mineraliteit die typisch is voor ons terroir.
+                    </p>
+                    <span class="druif-type wit">Witte wijn</span>
+                </div>
+                <div class="druif-card">
+                    <div class="druif-icon">🍇</div>
+                    <h3>Müller-Thurgau</h3>
+                    <p>
+                        Een klassiek Nederlands druivenras dat al decennialang succesvol
+                        wordt geteeld in Zuid-Limburg. Geeft toegankelijke, fruitige witte
+                        wijnen met een aangename frisheid.
+                    </p>
+                    <span class="druif-type wit">Witte wijn</span>
+                </div>
+                <div class="druif-card">
+                    <div class="druif-icon">🍇</div>
+                    <h3>[Ras 4]</h3>
+                    <p>
+                        [NIEUWE INFO NODIG: Voeg hier het vierde druivenras toe met
+                        een beschrijving van de eigenschappen en de wijn die het oplevert.]
+                    </p>
+                    <span class="druif-type">[Type]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VAN DRUIF TOT FLES -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label light">Het proces</span>
+                <h2 class="section-title light">Van druif tot fles</h2>
+                <p class="section-intro light">
+                    Wijnmaken is een ambacht dat geduld, kennis en passie vereist.
+                    Elk jaar opnieuw is het een avontuur.
+                </p>
+            </div>
+            <div class="process-grid">
+                <div class="process-card">
+                    <div class="process-step">01</div>
+                    <div class="process-icon">🌱</div>
+                    <h3>Teelt & verzorging</h3>
+                    <p>
+                        Het hele jaar door verzorgen wij onze wijnstokken met aandacht
+                        en vakmanschap. Snoeien, binden, bladplukken – elk seizoen
+                        vraagt om andere werkzaamheden. Wij werken zo natuurlijk mogelijk,
+                        met respect voor het biologisch evenwicht.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-step">02</div>
+                    <div class="process-icon">🍇</div>
+                    <h3>De oogst</h3>
+                    <p>
+                        Elk jaar in september en oktober worden de druiven met de hand
+                        geplukt op het perfecte moment van rijpheid. Handoogst garandeert
+                        de beste selectie en de hoogste kwaliteit. Dit is het hoogtepunt
+                        van het wijnbouwjaar.
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-step">03</div>
+                    <div class="process-icon">⚗️</div>
+                    <h3>Vinificatie</h3>
+                    <p>
+                        [NIEUWE INFO NODIG: Beschrijf hier het wijnmaakproces –
+                        hoe worden de druiven verwerkt, welke technieken worden gebruikt,
+                        hoe lang duurt de gisting, welke apparatuur wordt gebruikt.]
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-step">04</div>
+                    <div class="process-icon">🛢️</div>
+                    <h3>Rijping</h3>
+                    <p>
+                        [NIEUWE INFO NODIG: Beschrijf hier het rijpingsproces –
+                        rijpt de wijn op eiken vaten of roestvrijstalen tanks,
+                        hoe lang rijpt de wijn, wat doet dit met de smaak.]
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-step">05</div>
+                    <div class="process-icon">🍷</div>
+                    <h3>Botteling</h3>
+                    <p>
+                        [NIEUWE INFO NODIG: Beschrijf hier het bottelproces –
+                        wanneer wordt gebotteld, hoeveel flessen per jaar,
+                        hoe worden de flessen gelabeld en verpakt.]
+                    </p>
+                </div>
+                <div class="process-card">
+                    <div class="process-step">06</div>
+                    <div class="process-icon">🏆</div>
+                    <h3>Kwaliteitscontrole</h3>
+                    <p>
+                        [NIEUWE INFO NODIG: Beschrijf hier hoe de kwaliteit wordt
+                        gecontroleerd, eventuele certificeringen of keurmerken,
+                        proeverijen en selectieprocessen.]
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIJ WIJNGAARD -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Beelden</span>
+                <h2 class="section-title">De wijngaard door de seizoenen</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="../images/galerij-1.jpg" alt="Wijngaard lente" class="gallery-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder gallery\'><i class=\'fas fa-image\'></i><small>images/galerij-1.jpg</small></div>'">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/galerij-2.jpg" alt="Wijngaard zomer" class="gallery-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder gallery\'><i class=\'fas fa-image\'></i><small>images/galerij-2.jpg</small></div>'">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/galerij-3.jpg" alt="Wijngaard herfst" class="gallery-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder gallery\'><i class=\'fas fa-image\'></i><small>images/galerij-3.jpg</small></div>'">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/galerij-4.jpg" alt="Druiven oogst" class="gallery-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder gallery\'><i class=\'fas fa-image\'></i><small>images/galerij-4.jpg</small></div>'">
+                </div>
+                <div class="gallery-item">
+                    <img src="../images/galerij-5.jpg" alt="Wijnkelder" class="gallery-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder gallery\'><i class=\'fas fa-image\'></i><small>images/galerij-5.jpg</small></div>'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo.png" alt="Logo" class="footer-logo"
+                     onerror="this.outerHTML='<span class=\'logo-icon\'>🍷</span>'">
+                <span class="logo-text">Wittemer Wijngaard</span>
+                <p>Authentieke wijnen uit het hart van Zuid-Limburg.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigatie</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="over-ons.html">Over Ons</a></li>
+                    <li><a href="wijngaard.html">De Wijngaard</a></li>
+                    <li><a href="wijnen.html">Onze Wijnen</a></li>
+                    <li><a href="bezoek.html">Bezoek</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Wahlwiller, Zuid-Limburg</p>
+                <p><i class="fas fa-envelope"></i> info@wittemerwijngaard.nl</p>
+                <p><i class="fas fa-phone"></i> [Telefoonnummer]</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Wittemer Wijngaard. Alle rechten voorbehouden.</p>
+            <p>Alcoholhoudende dranken. Niet geschikt voor personen onder de 18 jaar.</p>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>

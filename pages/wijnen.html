@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onze Wijnen – Wittemer Wijngaard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            src: url('../fonts/playfair-display-v40-latin-italic.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            src: url('../fonts/lato-v25-latin-300.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/lato-v25-latin-regular.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../fonts/lato-v25-latin-700.woff2') format('woff2');
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVIGATIE -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <div class="logo-img-wrapper">
+                    <img src="../images/logo.png" alt="Wittemer Wijngaard logo" class="logo-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback" style="display:none;">
+                        <span class="logo-icon">🍷</span>
+                        <span class="logo-text">Wittemer Wijngaard</span>
+                    </div>
+                </div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="over-ons.html" class="nav-link">Over Ons</a></li>
+                <li><a href="wijngaard.html" class="nav-link">De Wijngaard</a></li>
+                <li><a href="wijnen.html" class="nav-link active">Onze Wijnen</a></li>
+                <li><a href="bezoek.html" class="nav-link">Bezoek</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGINA HEADER -->
+    <div class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="section-label light">Ons assortiment</span>
+            <h1>Onze Wijnen</h1>
+        </div>
+    </div>
+
+    <!-- INTRO TEKST -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Terroir & smaak</span>
+                <h2 class="section-title">Wijnen met karakter</h2>
+                <p class="section-intro">
+                    Elke wijn die wij maken is een directe weerspiegeling van onze wijngaard,
+                    ons klimaat en onze bodem. Wij noemen dit terroir – de unieke combinatie
+                    van factoren die onze wijnen hun eigen, onverwisselbare karakter geeft.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WITTE WIJNEN -->
+    <section class="section section-warm">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Wit</span>
+                <h2 class="section-title">Witte Wijnen</h2>
+            </div>
+            <div class="wine-detail-grid">
+
+                <!-- Witte wijn 1 -->
+                <div class="wine-detail-card">
+                    <div class="wine-detail-image">
+                        <img src="../images/wijn-wit-1.jpg" alt="Witte wijn 1" class="wine-detail-img"
+                             onerror="this.outerHTML='<div class=\'image-placeholder small\'><i class=\'fas fa-wine-bottle\'></i><small>images/wijn-wit-1.jpg</small></div>'">
+                        <div class="wine-badge">Wit</div>
+                    </div>
+                    <div class="wine-detail-info">
+                        <h3>[Naam Witte Wijn 1]</h3>
+                        <p class="wine-type">Droge witte wijn · [Jaar]</p>
+                        <p>
+                            [NIEUWE INFO NODIG: Voeg hier de beschrijving toe van de wijn –
+                            smaakprofiel, aroma's, kleur, mondgevoel en afdronk.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]
+                        </p>
+                        <div class="wine-specs">
+                            <div class="wine-spec">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Serveertemperatuur</span>
+                                <strong>[X]°C</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-percent"></i>
+                                <span>Alcohol</span>
+                                <strong>[X]%</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-seedling"></i>
+                                <span>Druivenras</span>
+                                <strong>[Ras]</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-utensils"></i>
+                                <span>Spijscombinatie</span>
+                                <strong>[Gerecht]</strong>
+                            </div>
+                        </div>
+                        <p class="wine-price-label">Prijs: <span>[Op aanvraag / €XX,XX]</span></p>
+                    </div>
+                </div>
+
+                <!-- Witte wijn 2 -->
+                <div class="wine-detail-card">
+                    <div class="wine-detail-image">
+                        <img src="../images/wijn-wit-2.jpg" alt="Witte wijn 2" class="wine-detail-img"
+                             onerror="this.outerHTML='<div class=\'image-placeholder small\'><i class=\'fas fa-wine-bottle\'></i><small>images/wijn-wit-2.jpg</small></div>'">
+                        <div class="wine-badge">Wit</div>
+                    </div>
+                    <div class="wine-detail-info">
+                        <h3>[Naam Witte Wijn 2]</h3>
+                        <p class="wine-type">Halfdroge witte wijn · [Jaar]</p>
+                        <p>
+                            [NIEUWE INFO NODIG: Voeg hier de beschrijving toe van de wijn –
+                            smaakprofiel, aroma's, kleur, mondgevoel en afdronk.]
+                        </p>
+                        <div class="wine-specs">
+                            <div class="wine-spec">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Serveertemperatuur</span>
+                                <strong>[X]°C</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-percent"></i>
+                                <span>Alcohol</span>
+                                <strong>[X]%</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-seedling"></i>
+                                <span>Druivenras</span>
+                                <strong>[Ras]</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-utensils"></i>
+                                <span>Spijscombinatie</span>
+                                <strong>[Gerecht]</strong>
+                            </div>
+                        </div>
+                        <p class="wine-price-label">Prijs: <span>[Op aanvraag / €XX,XX]</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RODE WIJNEN -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Rood</span>
+                <h2 class="section-title">Rode Wijnen</h2>
+            </div>
+            <div class="wine-detail-grid">
+
+                <!-- Rode wijn 1 -->
+                <div class="wine-detail-card">
+                    <div class="wine-detail-image">
+                        <img src="../images/wijn-rood-1.jpg" alt="Rode wijn 1" class="wine-detail-img"
+                             onerror="this.outerHTML='<div class=\'image-placeholder small\'><i class=\'fas fa-wine-bottle\'></i><small>images/wijn-rood-1.jpg</small></div>'">
+                        <div class="wine-badge red">Rood</div>
+                    </div>
+                    <div class="wine-detail-info">
+                        <h3>[Naam Rode Wijn 1]</h3>
+                        <p class="wine-type">Droge rode wijn · [Jaar]</p>
+                        <p>
+                            [NIEUWE INFO NODIG: Voeg hier de beschrijving toe van de wijn –
+                            smaakprofiel, aroma's, kleur, mondgevoel en afdronk.]
+                        </p>
+                        <div class="wine-specs">
+                            <div class="wine-spec">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Serveertemperatuur</span>
+                                <strong>[X]°C</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-percent"></i>
+                                <span>Alcohol</span>
+                                <strong>[X]%</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-seedling"></i>
+                                <span>Druivenras</span>
+                                <strong>[Ras]</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-utensils"></i>
+                                <span>Spijscombinatie</span>
+                                <strong>[Gerecht]</strong>
+                            </div>
+                        </div>
+                        <p class="wine-price-label">Prijs: <span>[Op aanvraag / €XX,XX]</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ROSÉ WIJNEN -->
+    <section class="section section-warm">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Rosé</span>
+                <h2 class="section-title">Rosé Wijnen</h2>
+            </div>
+            <div class="wine-detail-grid">
+
+                <!-- Rosé wijn 1 -->
+                <div class="wine-detail-card">
+                    <div class="wine-detail-image">
+                        <img src="../images/wijn-rose-1.jpg" alt="Rosé wijn" class="wine-detail-img"
+                             onerror="this.outerHTML='<div class=\'image-placeholder small\'><i class=\'fas fa-wine-bottle\'></i><small>images/wijn-rose-1.jpg</small></div>'">
+                        <div class="wine-badge rose">Rosé</div>
+                    </div>
+                    <div class="wine-detail-info">
+                        <h3>[Naam Rosé Wijn]</h3>
+                        <p class="wine-type">Droge rosé · [Jaar]</p>
+                        <p>
+                            [NIEUWE INFO NODIG: Voeg hier de beschrijving toe van de wijn –
+                            smaakprofiel, aroma's, kleur, mondgevoel en afdronk.]
+                        </p>
+                        <div class="wine-specs">
+                            <div class="wine-spec">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Serveertemperatuur</span>
+                                <strong>[X]°C</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-percent"></i>
+                                <span>Alcohol</span>
+                                <strong>[X]%</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-seedling"></i>
+                                <span>Druivenras</span>
+                                <strong>[Ras]</strong>
+                            </div>
+                            <div class="wine-spec">
+                                <i class="fas fa-utensils"></i>
+                                <span>Spijscombinatie</span>
+                                <strong>[Gerecht]</strong>
+                            </div>
+                        </div>
+                        <p class="wine-price-label">Prijs: <span>[Op aanvraag / €XX,XX]</span></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BESTEL / CONTACT CTA -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span                class="section-label light">Interesse?</span>
+                <h2 class="section-title light">Wijnen bestellen of meer informatie?</h2>
+                <p class="section-intro light">
+                    Wilt u onze wijnen bestellen of heeft u vragen over ons assortiment?
+                    Neem dan gerust contact met ons op. Wij helpen u graag verder.
+                </p>
+                <a href="contact.html" class="btn btn-secondary">Neem contact op</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo.png" alt="Logo" class="footer-logo"
+                     onerror="this.outerHTML='<span class=\'logo-icon\'>🍷</span>'">
+                <span class="logo-text">Wittemer Wijngaard</span>
+                <p>Authentieke wijnen uit het hart van Zuid-Limburg.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigatie</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="over-ons.html">Over Ons</a></li>
+                    <li><a href="wijngaard.html">De Wijngaard</a></li>
+                    <li><a href="wijnen.html">Onze Wijnen</a></li>
+                    <li><a href="bezoek.html">Bezoek</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Wahlwiller, Zuid-Limburg</p>
+                <p><i class="fas fa-envelope"></i> info@wittemerwijngaard.nl</p>
+                <p><i class="fas fa-phone"></i> [Telefoonnummer]</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Wittemer Wijngaard. Alle rechten voorbehouden.</p>
+            <p>Alcoholhoudende dranken. Niet geschikt voor personen onder de 18 jaar.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

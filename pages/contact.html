@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Wittemer Wijngaard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            src: url('../fonts/playfair-display-v40-latin-italic.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            src: url('../fonts/lato-v25-latin-300.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/lato-v25-latin-regular.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../fonts/lato-v25-latin-700.woff2') format('woff2');
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVIGATIE -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <div class="logo-img-wrapper">
+                    <img src="../images/logo.png" alt="Wittemer Wijngaard logo" class="logo-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback" style="display:none;">
+                        <span class="logo-icon">🍷</span>
+                        <span class="logo-text">Wittemer Wijngaard</span>
+                    </div>
+                </div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="over-ons.html" class="nav-link">Over Ons</a></li>
+                <li><a href="wijngaard.html" class="nav-link">De Wijngaard</a></li>
+                <li><a href="wijnen.html" class="nav-link">Onze Wijnen</a></li>
+                <li><a href="bezoek.html" class="nav-link">Bezoek</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGINA HEADER -->
+    <div class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="section-label light">Bereikbaarheid</span>
+            <h1>Contact</h1>
+        </div>
+    </div>
+
+    <!-- CONTACT SECTIE -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Neem contact op</span>
+                <h2 class="section-title">Wij zijn er voor u</h2>
+                <p class="section-intro">
+                    Heeft u vragen over onze wijnen, wilt u een bezoek plannen of
+                    bent u gewoon nieuwsgierig? Neem gerust contact met ons op.
+                    Wij reageren zo snel mogelijk.
+                </p>
+            </div>
+
+            <!-- CONTACT KAARTEN -->
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Adres</h3>
+                    <p>Wahlwillerweg [NUMMER]</p>
+                    <p>6286 [POSTCODE] Wahlwiller</p>
+                    <p>Zuid-Limburg, Nederland</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Telefoon</h3>
+                    <p>[NIEUWE INFO: Telefoonnummer]</p>
+                    <p class="contact-card-note">
+                        Bereikbaar op werkdagen<br>
+                        [NIEUWE INFO: tijden]
+                    </p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>E-mail</h3>
+                    <p>
+                        <a href="mailto:info@wittemerwijngaard.nl">
+                            info@wittemerwijngaard.nl
+                        </a>
+                    </p>
+                    <p class="contact-card-note">
+                        Wij reageren binnen 2 werkdagen
+                    </p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Volg ons</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p class="contact-card-note">
+                        Volg ons voor nieuws en updates
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEREIKBAARHEID -->
+    <section class="section section-warm">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-text">
+                    <span class="section-label">Hoe komt u bij ons?</span>
+                    <h2 class="section-title">Bereikbaarheid</h2>
+                    <div class="bereikbaarheid-list">
+                        <div class="bereikbaarheid-item">
+                            <i class="fas fa-car"></i>
+                            <div>
+                                <h4>Met de auto</h4>
+                                <p>
+                                    [NIEUWE INFO NODIG: Beschrijf de route met de auto,
+                                    vanuit welke steden, via welke wegen.
+                                    Parkeren is gratis mogelijk bij de wijngaard.]
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bereikbaarheid-item">
+                            <i class="fas fa-train"></i>
+                            <div>
+                                <h4>Met het openbaar vervoer</h4>
+                                <p>
+                                    [NIEUWE INFO NODIG: Beschrijf de OV-mogelijkheden,
+                                    dichtstbijzijnde bushalte of treinstation
+                                    en loopafstand naar de wijngaard.]
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bereikbaarheid-item">
+                            <i class="fas fa-bicycle"></i>
+                            <div>
+                                <h4>Met de fiets</h4>
+                                <p>
+                                    De wijngaard is ook goed bereikbaar per fiets
+                                    via de prachtige fietspaden door het Gulpdal.
+                                    [NIEUWE INFO NODIG: Voeg fietsroute toe.]
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bereikbaarheid-item">
+                            <i class="fas fa-parking"></i>
+                            <div>
+                                <h4>Parkeren</h4>
+                                <p>
+                                    [NIEUWE INFO NODIG: Beschrijf parkeermogelijkheden –
+                                    gratis, hoeveel plaatsen, waar precies.]
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-image">
+                    <img src="../images/bereikbaarheid.jpg" alt="Bereikbaarheid" class="content-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-image\'></i><p>Foto omgeving<br><small>images/bereikbaarheid.jpg</small></p></div>'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOOGLE MAPS -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label light">Locatie</span>
+                <h2 class="section-title light">Vind ons op de kaart</h2>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7851.349027579787!2d5.916876427231021!3d50.81570549999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0968f8cc1f95f%3A0xe4558ca1c788a71e!2sWittemer%20Wijngaard!5e1!3m2!1snl!2snl!4v1776507447645!5m2!1snl!2snl"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Locatie Wittemer Wijngaard">
+                </iframe>
+            </div>
+            <div class="map-info">
+                <div class="map-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Wahlwiller, Zuid-Limburg</span>
+                </div>
+                <div class="map-info-item">
+                    <i class="fas fa-car"></i>
+                    <span>Gratis parkeren aanwezig</span>
+                </div>
+                <div class="map-info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Alleen op afspraak</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo.png" alt="Logo" class="footer-logo"
+                     onerror="this.outerHTML='<span class=\'logo-icon\'>🍷</span>'">
+                <span class="logo-text">Wittemer Wijngaard</span>
+                <p>Authentieke wijnen uit het hart van Zuid-Limburg.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigatie</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="over-ons.html">Over Ons</a></li>
+                    <li><a href="wijngaard.html">De Wijngaard</a></li>
+                    <li><a href="wijnen.html">Onze Wijnen</a></li>
+                    <li><a href="bezoek.html">Bezoek</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Wahlwiller, Zuid-Limburg</p>
+                <p><i class="fas fa-envelope"></i> info@wittemerwijngaard.nl</p>
+                <p><i class="fas fa-phone"></i> [Telefoonnummer]</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Wittemer Wijngaard. Alle rechten voorbehouden.</p>
+            <p>Alcoholhoudende dranken. Niet geschikt voor personen onder de 18 jaar.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@
     --gold: #C9A84C;
     --gold-light: #E8D5A3;
     --cream: #FAF6F0;
-    --warm-gray: #8B7355;
+    --warm-gray:#8B7355;
     --text-dark: #2C1810;
     --text-medium: #5C4033;
     --text-light: #F5EDE0;
@@ -63,20 +63,14 @@ h1, h2, h3, h4 {
     line-height: 1.3;
 }
 
-h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
-h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
-h4 { font-size: 1.1rem; }
+h1 { font-size: clamp(2rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+h4 { font-size: 1.05rem; }
 
 p {
     margin-bottom: 1rem;
     color: var(--text-medium);
-}
-
-em {
-    color: var(--warm-gray);
-    font-style: italic;
-    font-size: 0.9rem;
 }
 
 /* ================================
@@ -89,7 +83,7 @@ em {
 }
 
 .section {
-    padding: 6rem 0;
+    padding: 5rem 0;
 }
 
 .section-dark {
@@ -102,13 +96,13 @@ em {
 
 .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 }
 
 .section-label {
     display: inline-block;
     font-family: var(--font-body);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -130,9 +124,10 @@ em {
 }
 
 .section-intro {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.1rem;
+    max-width: 620px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.05rem;
+    color: var(--text-medium);
 }
 
 .section-intro.light {
@@ -142,7 +137,7 @@ em {
 .section-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 4rem;
     align-items: center;
 }
 
@@ -154,15 +149,20 @@ em {
     direction: ltr;
 }
 
+.section-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 /* ================================
    KNOPPEN
 ================================ */
 .btn {
     display: inline-block;
-    padding: 0.9rem 2.2rem;
+    padding: 0.85rem 2rem;
     border-radius: 50px;
-        font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 1px;
     cursor: pointer;
@@ -207,11 +207,6 @@ em {
     transform: translateY(-2px);
 }
 
-.btn.full-width {
-    width: 100%;
-    text-align: center;
-}
-
 /* ================================
    NAVIGATIE
 ================================ */
@@ -241,11 +236,28 @@ em {
     justify-content: space-between;
 }
 
+/* LOGO */
 .nav-logo {
     display: flex;
     align-items: center;
+}
+
+.logo-img-wrapper {
+    display: flex;
+    align-items: center;
     gap: 0.6rem;
-    color: var(--white);
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-fallback {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
 .logo-icon {
@@ -254,7 +266,7 @@ em {
 
 .logo-text {
     font-family: var(--font-heading);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--white);
 }
@@ -262,12 +274,12 @@ em {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .nav-link {
     color: var(--white);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 400;
     letter-spacing: 1px;
     position: relative;
@@ -323,6 +335,55 @@ em {
 }
 
 /* ================================
+   PAGINA HEADER (subpagina's)
+================================ */
+.page-header {
+    position: relative;
+    height: 40vh;
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--wine-dark) 0%, var(--wine-red) 100%);
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+}
+
+.page-header-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(74, 21, 32, 0.5) 0%,
+        rgba(74, 21, 32, 0.8) 100%
+    );
+}
+
+.page-header-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--white);
+    padding: 0 2rem;
+    margin-top: 4rem;
+}
+
+.page-header-content h1 {
+    color: var(--white);
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+    margin-top: 0.5rem;
+}
+
+/* ================================
    HERO SECTIE
 ================================ */
 .hero {
@@ -340,10 +401,10 @@ em {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('../images/hero.jpg');
+    background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.35;
 }
 
 .hero-overlay {
@@ -351,8 +412,8 @@ em {
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(74, 21, 32, 0.4) 0%,
-        rgba(74, 21, 32, 0.7) 100%
+        rgba(74, 21, 32, 0.3) 0%,
+        rgba(74, 21, 32, 0.75) 100%
     );
 }
 
@@ -366,7 +427,7 @@ em {
 }
 
 .hero-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--gold-light);
@@ -381,7 +442,7 @@ em {
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: var(--gold-light);
     margin-bottom: 2.5rem;
     font-weight: 300;
@@ -402,7 +463,7 @@ em {
     z-index: 2;
     color: var(--white);
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     animation: bounce 2s infinite;
@@ -411,7 +472,7 @@ em {
 .hero-scroll i {
     display: block;
     margin-top: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--gold);
 }
 
@@ -425,7 +486,7 @@ em {
 ================================ */
 .intro-bar {
     background-color: var(--wine-red);
-    padding: 1.5rem 0;
+    padding: 1.2rem 0;
 }
 
 .intro-bar-container {
@@ -442,21 +503,29 @@ em {
 .intro-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.6rem;
     color: var(--white);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 300;
     letter-spacing: 1px;
 }
 
 .intro-item i {
     color: var(--gold-light);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 /* ================================
-   OVER ONS SECTIE
+   CONTENT AFBEELDINGEN
 ================================ */
+.content-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
 .section-text {
     display: flex;
     flex-direction: column;
@@ -464,7 +533,7 @@ em {
 }
 
 .section-text p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.8;
 }
 
@@ -477,6 +546,9 @@ em {
     position: relative;
 }
 
+/* ================================
+   IMAGE PLACEHOLDER (fallback)
+================================ */
 .image-placeholder {
     width: 100%;
     aspect-ratio: 4/3;
@@ -494,7 +566,7 @@ em {
 }
 
 .image-placeholder i {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--gold);
 }
 
@@ -504,122 +576,82 @@ em {
 
 .image-placeholder.gallery {
     aspect-ratio: 1/1;
-}
-
-.image-badge {
-    position: absolute;
-    bottom: -1.5rem;
-    right: -1.5rem;
-    background-color: var(--wine-red);
-    color: var(--white);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-shadow: var(--shadow);
-}
-
-.badge-number {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-}
-
-.badge-text {
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    min-height: 200px;
 }
 
 /* ================================
-   WIJNGAARD SECTIE
+   NATUUR GRID
 ================================ */
-.process-grid {
+.nature-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
 }
 
-.process-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(201, 168, 76, 0.3);
+.nature-card {
+    background: var(--white);
     border-radius: var(--border-radius);
     padding: 2rem 1.5rem;
     text-align: center;
+    box-shadow: var(--shadow);
     transition: var(--transition);
+    border-top: 3px solid var(--gold);
 }
 
-.process-card:hover {
-    background: rgba(255,255,255,0.1);
+.nature-card:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.nature-card.dark {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-top: 3px solid var(--gold);
+}
+
+.nature-card.dark:hover {
+    background: rgba(255,255,255,0.1);
     border-color: var(--gold);
 }
 
-.process-icon {
-    font-size: 2.5rem;
+.nature-card.dark h3 {
+    color: var(--gold-light);
+}
+
+.nature-card.dark p {
+    color: rgba(245, 237, 224, 0.8);
+}
+
+.nature-icon {
+    font-size: 2.2rem;
+    color: var(--wine-red);
     margin-bottom: 1rem;
 }
 
-.process-card h3 {
-    color: var(--gold-light);
+.nature-card.dark .nature-icon {
+    color: var(--gold);
+}
+
+.nature-card h3 {
+    color: var(--wine-dark);
     margin-bottom: 0.75rem;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 }
 
-.process-card p {
-    color: rgba(245, 237, 224, 0.8);
-    font-size: 0.95rem;
-}
-
-.wijngaard-info {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.info-card {
-    background: rgba(255,255,255,0.05);
-    border-left: 3px solid var(--gold);
-    padding: 1.5rem;
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-}
-
-.info-card h4 {
-    color: var(--gold-light);
-    margin-bottom: 1rem;
-    font-family: var(--font-heading);
-}
-
-.info-card p,
-.info-card li {
-    color: rgba(245, 237, 224, 0.8);
-    font-size: 0.95rem;
-}
-
-.info-card ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.info-card li::before {
-    content: '🍇 ';
+.nature-card p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin-bottom: 0;
 }
 
 /* ================================
-   WIJNEN SECTIE
+   WIJN GRID (homepage preview)
 ================================ */
 .wine-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
+    margin-bottom: 1rem;
 }
 
 .wine-card {
@@ -631,12 +663,24 @@ em {
 }
 
 .wine-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-hover);
 }
 
 .wine-image {
     position: relative;
+    overflow: hidden;
+}
+
+.wine-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.wine-card:hover .wine-img {
+    transform: scale(1.04);
 }
 
 .wine-badge {
@@ -645,9 +689,9 @@ em {
     right: 1rem;
     background-color: var(--gold);
     color: var(--wine-dark);
-    padding: 0.3rem 0.8rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 50px;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -673,150 +717,224 @@ em {
 
 .wine-type {
     color: var(--gold);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
 }
 
-.wine-details {
+.wine-info p {
+    font-size: 0.92rem;
+    margin-bottom: 0;
+}
+
+/* ================================
+   WIJN DETAIL GRID (wijnen pagina)
+================================ */
+.wine-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.wine-detail-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    transition: var(--transition);
+}
+
+.wine-detail-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+}
+
+.wine-detail-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.wine-detail-img {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    object-fit: cover;
+}
+
+.wine-detail-info {
+    padding: 1.8rem;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    margin: 1rem 0;
+    gap: 0.5rem;
+}
+
+.wine-detail-info h3 {
+    color: var(--wine-dark);
+    margin-bottom: 0.2rem;
+}
+
+.wine-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
     padding: 1rem;
     background-color: var(--cream);
     border-radius: var(--border-radius);
 }
 
-.wine-details span {
-    font-size: 0.85rem;
-    color: var(--text-medium);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.wine-details i {
-    color: var(--wine-red);
-    width: 16px;
-}
-
-.wine-price {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--wine-red);
-    font-weight: 700;
-    margin-bottom: 0;
-}
-
-.wine-cta {
-    text-align: center;
-    padding: 3rem;
-    background-color: var(--cream);
-    border-radius: var(--border-radius);
-}
-
-.wine-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-
-/* ================================
-   BEZOEK SECTIE
-================================ */
-.visit-options {
+.wine-spec {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin: 2rem 0;
+    gap: 0.2rem;
 }
 
-.visit-option {
-    display: flex;
-    gap: 1.2rem;
-    align-items: flex-start;
-}
-
-.visit-option i {
-    font-size: 1.5rem;
+.wine-spec i {
     color: var(--wine-red);
-    margin-top: 0.2rem;
-    flex-shrink: 0;
+    font-size: 0.9rem;
 }
 
-.visit-option h4 {
-    color: var(--wine-dark);
-    margin-bottom: 0.3rem;
-}
-
-.visit-option p {
-    font-size: 0.95rem;
-    margin-bottom: 0;
-}
-
-.openingstijden {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    margin: 2rem 0;
-    box-shadow: var(--shadow);
-}
-
-.openingstijden h4 {
-    color: var(--wine-dark);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.openingstijden h4 i {
-    color: var(--wine-red);
-}
-
-.tijden-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.tijden-table tr {
-    border-bottom: 1px solid var(--cream);
-}
-
-.tijden-table tr:last-child {
-    border-bottom: none;
-}
-
-.tijden-table td {
-    padding: 0.6rem 0;
-    font-size: 0.95rem;
-    color: var(--text-medium);
-}
-
-.tijden-table td:last-child {
-    text-align: right;
-    font-weight: 700;
-    color: var(--wine-red);
-}
-
-.tijden-note {
-    margin-top: 1rem;
-    font-size: 0.85rem;
+.wine-spec span {
+    font-size: 0.75rem;
     color: var(--warm-gray);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wine-spec strong {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.wine-price-label {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--text-medium);
     margin-bottom: 0;
 }
 
-.tijden-note i {
-    color: var(--gold);
+.wine-price-label span {
+    color: var(--wine-red);
+    font-weight: 700;
 }
 
 /* ================================
-   GALERIJ SECTIE
+   DRUIVEN GRID
+================================ */
+.druiven-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.druif-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.druif-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.druif-icon {
+    font-size: 2rem;
+}
+
+.druif-card h3 {
+    color: var(--wine-dark);
+    font-size: 1.2rem;
+}
+
+.druif-card p {
+    font-size: 0.92rem;
+    flex: 1;
+}
+
+.druif-type {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-color: var(--gold-light);
+    color: var(--wine-dark);
+    align-self: flex-start;
+}
+
+.druif-type.rood {
+    background-color: var(--wine-red);
+    color: var(--white);
+}
+
+.druif-type.wit {
+    background-color: var(--gold);
+    color: var(--wine-dark);
+}
+
+/* ================================
+   PROCESS GRID (wijngaard pagina)
+================================ */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.process-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    border-radius: var(--border-radius);
+    padding: 2rem 1.5rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.process-card:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-4px);
+    border-color: var(--gold);
+}
+
+.process-step {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(201, 168, 76, 0.2);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.process-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.process-card h3 {
+    color: var(--gold-light);
+    margin-bottom: 0.75rem;
+    font-size: 1.15rem;
+}
+
+.process-card p {
+    color: rgba(245, 237, 224, 0.8);
+    font-size: 0.92rem;
+    margin-bottom: 0;
+}
+
+/* ================================
+   GALERIJ
 ================================ */
 .gallery-grid {
     display: grid;
@@ -836,197 +954,279 @@ em {
     grid-row: span 2;
 }
 
-.gallery-item .image-placeholder {
+.gallery-img {
+    width: 100%;
     height: 100%;
     min-height: 200px;
+    object-fit: cover;
     transition: var(--transition);
 }
 
-.gallery-item:hover .image-placeholder {
-    transform: scale(1.03);
+.gallery-item:hover .gallery-img {
+    transform: scale(1.04);
 }
 
 /* ================================
-   CONTACT SECTIE
+   BEZOEK KAARTEN
 ================================ */
-.contact-grid {
+.visit-cards {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
-    margin-bottom: 4rem;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-.contact-item {
+.visit-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.visit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.visit-card-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--wine-red);
+    border: 2px solid var(--gold-light);
+}
+
+.visit-card h3 {
+    color: var(--wine-dark);
+    font-size: 1.3rem;
+}
+
+.visit-card p {
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.visit-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.visit-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text-medium);
+}
+
+.visit-list li i {
+    color: var(--gold);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+/* ================================
+   OPENINGSTIJDEN
+================================ */
+.openingstijden {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.tijden-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tijden-table tr {
+    border-bottom: 1px solid var(--cream);
+}
+
+.tijden-table tr:last-child {
+    border-bottom: none;
+}
+
+.tijden-table td {
+    padding: 0.7rem 0;
+    font-size: 0.92rem;
+    color: var(--text-medium);
+}
+
+.tijden-table td i {
+    color: var(--wine-red);
+    margin-right: 0.5rem;
+    width: 16px;
+}
+
+.tijden-table td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--wine-red);
+}
+
+.tijden-note {
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--warm-gray);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0;
+}
+
+.tijden-note i {
+    color: var(--gold);
+}
+
+/* ================================
+   CONTACT KAARTEN
+================================ */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    border-top: 3px solid var(--gold);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.contact-card-icon {
+    width: 55px;
+    height: 55px;
+    background-color: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--wine-red);
+    margin: 0 auto 1rem;
+    border: 2px solid var(--gold-light);
+}
+
+.contact-card h3 {
+    color: var(--wine-dark);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.contact-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.contact-card a {
+    color: var(--wine-red);
+    text-decoration: underline;
+}
+
+.contact-card a:hover {
+    color: var(--wine-dark);
+}
+
+.contact-card-note {
+    font-size: 0.8rem !important;
+    color: var(--warm-gray) !important;
+    margin-top: 0.5rem;
+}
+
+/* ================================
+   BEREIKBAARHEID
+================================ */
+.bereikbaarheid-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.bereikbaarheid-item {
     display: flex;
     gap: 1.2rem;
     align-items: flex-start;
 }
 
-.contact-item i {
-    font-size: 1.3rem;
-    color: var(--gold);
+.bereikbaarheid-item > i {
+    font-size: 1.4rem;
+    color: var(--wine-red);
     margin-top: 0.2rem;
     flex-shrink: 0;
-    width: 20px;
+    width: 24px;
 }
 
-.contact-item h4 {
-    color: var(--gold-light);
+.bereikbaarheid-item h4 {
+    color: var(--wine-dark);
     margin-bottom: 0.3rem;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-size: 1rem;
 }
 
-.contact-item p {
-    color: rgba(245, 237, 224, 0.8);
-    font-size: 0.95rem;
+.bereikbaarheid-item p {
+    font-size: 0.92rem;
     margin-bottom: 0;
 }
 
-.contact-item a {
-    color: var(--gold-light);
-    text-decoration: underline;
-}
-
-.contact-item a:hover {
-    color: var(--gold);
-}
-
-.social-links h4 {
-    color: var(--gold-light);
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
+/* ================================
+   SOCIAL ICONS
+================================ */
 .social-icons {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
+    justify-content: center;
+    margin: 0.75rem 0;
 }
 
 .social-icon {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--wine-red);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gold);
-    font-size: 1rem;
+    color: var(--wine-red);
+    font-size: 0.95rem;
     transition: var(--transition);
 }
 
 .social-icon:hover {
-    background-color: var(--gold);
-    color: var(--wine-dark);
+    background-color: var(--wine-red);
+    color: var(--white);
     transform: translateY(-3px);
 }
 
 /* ================================
-   CONTACTFORMULIER
+   GOOGLE MAPS
 ================================ */
-.contact-form-wrapper {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(201, 168, 76, 0.3);
-    border-radius: var(--border-radius);
-    padding: 2.5rem;
-}
-
-.contact-form h3 {
-    color: var(--gold-light);
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    color: var(--gold-light);
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 0.9rem 1.2rem;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(201, 168, 76, 0.4);
-    border-radius: var(--border-radius);
-    color: var(--text-light);
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    transition: var(--transition);
-    outline: none;
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: rgba(245, 237, 224, 0.4);
-}
-
-.form-group select option {
-    background-color: var(--wine-dark);
-    color: var(--text-light);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    border-color: var(--gold);
-    background: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 130px;
-}
-
-.form-note {
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: rgba(245, 237, 224, 0.5);
-    text-align: center;
-    margin-bottom: 0;
-}
-
-/* ================================
-   GOOGLE MAPS - RESPONSIVE FIX
-================================ */
-.map-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: var(--border-radius);
-}
-
-.map-container h3 {
-    color: var(--gold-light);
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-/* Wrapper om de iframe heen */
 .map-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 45%; /* Verhouding van de kaart */
+    padding-bottom: 45%;
     height: 0;
     overflow: hidden;
     border-radius: var(--border-radius);
@@ -1043,36 +1243,15 @@ em {
     border-radius: var(--border-radius);
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-    .map-wrapper {
-        padding-bottom: 55%;
-    }
-}
-
-/* iPhone / Mobiel */
-@media (max-width: 768px) {
-    .map-wrapper {
-        padding-bottom: 75%;
-        border-radius: var(--border-radius);
-    }
-}
-
-/* Kleine iPhone (SE) */
-@media (max-width: 390px) {
-    .map-wrapper {
-        padding-bottom: 90%;
-    }
-}
-
 .map-info {
     display: flex;
     gap: 2rem;
-    padding: 1.2rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem 1.5rem;
+    background: rgba(255,255,255,0.05);
     border: 1px solid rgba(201, 168, 76, 0.3);
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     flex-wrap: wrap;
+    margin-top: -4px;
 }
 
 .map-info-item {
@@ -1080,7 +1259,7 @@ em {
     align-items: center;
     gap: 0.6rem;
     color: rgba(245, 237, 224, 0.8);
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
 
 .map-info-item i {
@@ -1102,7 +1281,7 @@ em {
     padding: 0 2rem 3rem;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 .footer-brand {
@@ -1111,41 +1290,44 @@ em {
     gap: 0.5rem;
 }
 
-.footer-brand .logo-icon {
-    font-size: 2rem;
+.footer-logo {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 0.25rem;
 }
 
 .footer-brand .logo-text {
     font-family: var(--font-heading);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: var(--white);
 }
 
 .footer-brand p {
     color: rgba(245, 237, 224, 0.6);
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
     margin-bottom: 0;
 }
 
 .footer-links h4,
 .footer-contact h4 {
     color: var(--gold);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .footer-links ul {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
 }
 
 .footer-links a {
     color: rgba(245, 237, 224, 0.7);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: var(--transition);
 }
 
@@ -1156,20 +1338,21 @@ em {
 
 .footer-contact p {
     color: rgba(245, 237, 224, 0.7);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    gap: 0.6rem;
+    margin-bottom: 0.6rem;
 }
 
 .footer-contact i {
     color: var(--gold);
     width: 16px;
+    flex-shrink: 0;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255,255,255,0.1);
     padding: 1.5rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -1177,176 +1360,29 @@ em {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 .footer-bottom p {
     color: rgba(245, 237, 224, 0.4);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     margin-bottom: 0;
 }
 
 /* ================================
-   RESPONSIVE - TABLET
-================================ */
-@media (max-width: 1024px) {
-    .process-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .wine-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-
-    .footer-brand {
-        grid-column: span 2;
-    }
-}
-
-/* ================================
-   RESPONSIVE - MOBIEL
-================================ */
-@media (max-width: 768px) {
-    .section {
-        padding: 4rem 0;
-    }
-
-    /* Navigatie mobiel */
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 75%;
-        height: 100vh;
-        background-color: var(--wine-dark);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2.5rem;
-        transition: var(--transition);
-        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
-    }
-
-    .nav-menu.active {
-        right: 0;
-    }
-
-    .nav-link {
-        font-size: 1.1rem;
-    }
-
-    /* Grid aanpassingen */
-    .section-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .section-grid.reverse {
-        direction: ltr;
-    }
-
-    .process-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .wijngaard-info {
-        grid-template-columns: 1fr;
-    }
-
-    .wine-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .gallery-item.large {
-        grid-column: span 2;
-        grid-row: span 1;
-    }
-
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .footer-brand {
-        grid-column: span 1;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .image-badge {
-        bottom: -1rem;
-        right: -0.5rem;
-        width: 80px;
-        height: 80px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .intro-bar-container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 0 1.2rem;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item.large {
-        grid-column: span 1;
-    }
-
-    .contact-form-wrapper {
-        padding: 1.5rem;
-    }
-}
-    /* ================================
    SCROLL ANIMATIES
 ================================ */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);  
-    will-change: transform, opacity; 
-    transition: 
-        opacity 0.4s ease,       
-        transform 0.4s ease;
+    transform: translateY(20px);
+    will-change: transform, opacity;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-
 
 /* ================================
    NOTIFICATIES
@@ -1362,7 +1398,7 @@ em {
     padding: 1rem 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-hover);
-    max-width: 400px;
+    max-width: 380px;
     animation: slideIn 0.3s ease;
 }
 
@@ -1383,7 +1419,7 @@ em {
 
 .notification span {
     flex: 1;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .notification button {
@@ -1406,25 +1442,13 @@ em {
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(100px); }
+    to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideOut {
-    from {
-        opacity: 1;
-        transform: translateX(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateX(100px);
-    }
+    from { opacity: 1; transform: translateX(0); }
+    to   { opacity: 0; transform: translateX(100px); }
 }
 
 /* ================================
@@ -1448,7 +1472,7 @@ em {
 .lightbox-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0,0,0,0.92);
 }
 
 .lightbox-content {
@@ -1475,34 +1499,241 @@ em {
     transform: rotate(90deg);
 }
 
-.lightbox-image {
-    background: var(--wine-dark);
+.lightbox-img-real {
+    max-width: 90vw;
+    max-height: 80vh;
     border-radius: var(--border-radius);
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    color: var(--gold-light);
-    min-width: 300px;
-    text-align: center;
-}
-
-.lightbox-image i {
-    font-size: 4rem;
-    color: var(--gold);
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
 /* ================================
-   RESPECT GEBRUIKERSINSTELLINGEN
+   RESPONSIVE – TABLET (max 1024px)
 ================================ */
+@media (max-width: 1024px) {
 
-/* Als gebruiker minder animaties wil
-   of apparaat is traag */
+    .nature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .druiven-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wine-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wine-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-detail-card {
+        grid-template-columns: 1fr 1.8fr;
+    }
+
+    .contact-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .visit-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    .map-wrapper {
+        padding-bottom: 55%;
+    }
+}
+
+/* ================================
+   RESPONSIVE – MOBIEL (max 768px)
+================================ */
+@media (max-width: 768px) {
+
+    .section {
+        padding: 3.5rem 0;
+    }
+
+    .container {
+        padding: 0 1.2rem;
+    }
+
+    /* Navigatie mobiel */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 78%;
+        height: 100vh;
+        background-color: var(--wine-dark);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        transition: var(--transition);
+        box-shadow: -5px 0 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+    }
+
+    /* Grids naar 1 kolom */
+    .section-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .section-grid.reverse {
+        direction: ltr;
+    }
+
+    .nature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .druiven-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-detail-img {
+        min-height: 200px;
+        height: 200px;
+    }
+
+    .wine-specs {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .visit-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .intro-bar-container {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
+
+    .content-img {
+        height: 260px;
+    }
+
+    .page-header {
+        height: 32vh;
+        min-height: 220px;
+    }
+
+    .map-wrapper {
+        padding-bottom: 75%;
+    }
+
+    .map-info {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* ================================
+   RESPONSIVE – KLEIN MOBIEL (max 480px)
+================================ */
+@media (max-width: 480px) {
+
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .wine-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .map-wrapper {
+        padding-bottom: 90%;
+    }
+
+    .logo-img {
+        height: 38px;
+    }
+
+    .footer-logo {
+        height: 42px;
+    }
+}
+
+/* ================================
+   MINDER ANIMATIES (toegankelijkheid)
+================================ */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
@@ -1515,16 +1746,8 @@ em {
     }
 }
 
-/* Op mobiel minder animaties */
 @media (max-width: 768px) {
     .fade-in {
-        transition-duration: 0.3s; /* Korter op mobiel */
-    }
-
-    /* Geen delays op mobiel */
-    .process-card,
-    .wine-card,
-    .info-card {
-        transition-delay: 0ms !important;
+        transition-duration: 0.3s;
     }
 }

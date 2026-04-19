@@ -2,58 +2,51 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Wittemer Wijngaard Wahlwiller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wittemer Wijngaard – Wahlwiller</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* playfair-display-sc-regular - latin */
         @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: 'Playfair Display';
-        src: url('fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
-        font-style: normal;
-        font-weight: 400;
-        
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
         }
-        /* playfair-display-sc-italic - latin */
         @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: 'Playfair Display';
-        font-style: italic;
-        font-weight: 400;
-        src: url('fonts/playfair-display-v40-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            src: url('fonts/playfair-display-v40-latin-italic.woff2') format('woff2');
         }
-        /* playfair-display-sc-700 - latin */
         @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: 'Playfair Display';
-        font-style: normal;
-        font-weight: 700;
-        src: url('fonts/playfair-display-v40-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 700;
+            src: url('fonts/playfair-display-v40-latin-700.woff2') format('woff2');
         }
-        /* lato-300 - latin */
         @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 300;
-        src: url('fonts/lato-v25-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            src: url('fonts/lato-v25-latin-300.woff2') format('woff2');
         }
-        /* lato-regular - latin */
         @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
-        src: url('fonts/lato-v25-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/lato-v25-latin-regular.woff2') format('woff2');
         }
-        /* lato-700 - latin */
         @font-face {
-        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 700;
-        src: url('fonts/lato-v25-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            src: url('fonts/lato-v25-latin-700.woff2') format('woff2');
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -63,18 +56,30 @@
     <!-- NAVIGATIE -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">🍷</span>
-                <span class="logo-text">Wittemer Wijngaard</span>
-            </div>
+
+            <!-- LOGO -->
+            <a href="index.html" class="nav-logo">
+                <div class="logo-img-wrapper">
+                    <!-- Vervang onderstaande src door jouw logo bestand -->
+                    <!-- Voorbeeld: src="images/logo.png" -->
+                    <img src="images/logo.png" alt="Wittemer Wijngaard logo" class="logo-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback" style="display:none;">
+                        <span class="logo-icon">🍷</span>
+                        <span class="logo-text">Wittemer Wijngaard</span>
+                    </div>
+                </div>
+            </a>
+
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#over-ons" class="nav-link">Over Ons</a></li>
-                <li><a href="#wijngaard" class="nav-link">De Wijngaard</a></li>
-                <li><a href="#wijnen" class="nav-link">Onze Wijnen</a></li>
-                <li><a href="#bezoek" class="nav-link">Bezoek</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="pages/over-ons.html" class="nav-link">Over Ons</a></li>
+                <li><a href="pages/wijngaard.html" class="nav-link">De Wijngaard</a></li>
+                <li><a href="pages/wijnen.html" class="nav-link">Onze Wijnen</a></li>
+                <li><a href="pages/bezoek.html" class="nav-link">Bezoek</a></li>
+                <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
             </ul>
+
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -83,16 +88,16 @@
         </div>
     </nav>
 
-    <!-- HERO SECTIE -->
+    <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <p class="hero-subtitle">Welkom bij</p>
             <h1 class="hero-title">Wittemer Wijngaard</h1>
-            <p class="hero-description">Authentieke Nederlandse wijnen uit het hart van Zuid-Limburg</p>
+            <p class="hero-description">Authentieke wijnen uit het hart van Zuid-Limburg</p>
             <div class="hero-buttons">
-                <a href="#wijnen" class="btn btn-primary">Ontdek onze wijnen</a>
-                <a href="#bezoek" class="btn btn-secondary">Plan een bezoek</a>
+                <a href="pages/wijnen.html" class="btn btn-primary">Ontdek onze wijnen</a>
+                <a href="pages/bezoek.html" class="btn btn-secondary">Plan een bezoek</a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -102,7 +107,7 @@
     </section>
 
     <!-- INTRO BALK -->
-    <section class="intro-bar">
+    <div class="intro-bar">
         <div class="intro-bar-container">
             <div class="intro-item">
                 <i class="fas fa-wine-bottle"></i>
@@ -110,7 +115,7 @@
             </div>
             <div class="intro-item">
                 <i class="fas fa-leaf"></i>
-                <span>Duurzaam geteeld</span>
+                <span>Biologisch evenwicht</span>
             </div>
             <div class="intro-item">
                 <i class="fas fa-map-marker-alt"></i>
@@ -121,406 +126,141 @@
                 <span>Rondleidingen mogelijk</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- OVER ONS -->
-    <section class="section" id="over-ons">
+    <!-- KORT OVER ONS – HOMEPAGE PREVIEW -->
+    <section class="section" id="over-ons-preview">
         <div class="container">
             <div class="section-grid">
                 <div class="section-text">
                     <span class="section-label">Ons verhaal</span>
-                    <h2 class="section-title">Over Wijngoed Wahlwiller</h2>
-                    <p>Wijngoed Wahlwiller is gelegen in het prachtige Zuid-Limburgse heuvellandschap, in het kleine dorpje Wahlwiller. Al generaties lang wordt hier met passie en vakmanschap wijn gemaakt van de hoogste kwaliteit.</p>
-                    <p>De wijngaard ligt op de zuidelijke hellingen van de Gulpdal, wat zorgt voor optimale zonbestraling en een uniek microklimaat. Dit geeft onze wijnen hun karakteristieke smaak en aroma.</p>
-                    <p><em>[NIEUWE INFO NODIG: Voeg hier de geschiedenis van de familie/oprichting toe - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.]</em></p>
-                    <a href="#wijngaard" class="btn btn-outline">Lees meer over de wijngaard</a>
+                    <h2 class="section-title">Een wijngaard in balans met de natuur</h2>
+                    <p>
+                        De Wittemer Wijngaard ligt verscholen in het glooiende heuvellandschap van Zuid-Limburg,
+                        in het rustige dorpje Wahlwiller. Hier, op de zonnige hellingen van het Gulpdal,
+                        groeien onze druiven in een omgeving die al eeuwen onveranderd is.
+                    </p>
+                    <p>
+                        Wij geloven in een wijngaard die in harmonie leeft met zijn omgeving.
+                        Biologisch evenwicht, rijke flora en fauna, en respect voor de bodem
+                        staan centraal in alles wat wij doen.
+                    </p>
+                    <a href="pages/over-ons.html" class="btn btn-outline">Lees ons verhaal</a>
                 </div>
                 <div class="section-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Foto van de wijngaard<br><small>[Voeg hier een foto toe: images/over-ons.jpg]</small></p>
-                    </div>
-                    <div class="image-badge">
-                        <span class="badge-number">[JAAR]</span>
-                        <span class="badge-text">Jaar ervaring</span>
-                    </div>
+                    <!-- Vervang door: src="images/over-ons.jpg" -->
+                    <img src="images/over-ons.jpg" alt="Wittemer Wijngaard" class="content-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-image\'></i><p>Foto wijngaard<br><small>images/over-ons.jpg</small></p></div>'">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DE WIJNGAARD -->
-    <section class="section section-dark" id="wijngaard">
+    <!-- NATUUR & BIODIVERSITEIT SECTIE -->
+    <section class="section section-warm">
         <div class="container">
             <div class="section-header">
-                <span class="section-label light">De wijngaard</span>
-                <h2 class="section-title light">Van druif tot fles</h2>
-                <p class="section-intro light">Ontdek hoe wij onze wijnen maken, van de zorg voor de druiven tot de uiteindelijke fles.</p>
+                <span class="section-label">Natuur & Biodiversiteit</span>
+                <h2 class="section-title">Biologisch evenwicht & flora en fauna</h2>
+                <p class="section-intro">
+                    Onze wijngaard is meer dan een plek waar druiven groeien.
+                    Het is een levend ecosysteem.
+                </p>
             </div>
-
-            <div class="process-grid">
-                <div class="process-card">
-                    <div class="process-icon">🌱</div>
-                    <h3>Teelt</h3>
-                    <p>Onze druiven worden met de grootste zorg geteeld op de zuidelijke hellingen van Zuid-Limburg. We werken zo duurzaam mogelijk en respecteren de natuur.</p>
+            <div class="nature-grid">
+                <div class="nature-card">
+                    <div class="nature-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Levende bodem</h3>
+                    <p>
+                        Tussen de wijnstokken groeien wilde kruiden, grassen en bloemen.
+                        Deze begroeiing houdt de bodem gezond, voorkomt erosie op de hellingen
+                        en biedt voedsel en schuilplaats aan talloze insecten.
+                    </p>
                 </div>
-                <div class="process-card">
-                    <div class="process-icon">🍇</div>
-                    <h3>Oogst</h3>
-                    <p>Elk jaar in september/oktober worden de druiven met de hand geplukt op het perfecte moment van rijpheid. Dit garandeert de beste kwaliteit.</p>
+                <div class="nature-card">
+                    <div class="nature-icon"><i class="fas fa-bug"></i></div>
+                    <h3>Insecten & bestuivers</h3>
+                    <p>
+                        Bijen, vlinders en zweefvliegen zijn welkome gasten in onze wijngaard.
+                        Door geen chemische bestrijdingsmiddelen te gebruiken, kunnen deze
+                        essentiële bestuivers vrij gedijen en bijdragen aan het biologisch evenwicht.
+                    </p>
                 </div>
-                <div class="process-card">
-                    <div class="process-icon">⚗️</div>
-                    <h3>Vinificatie</h3>
-                    <p><em>[NIEUWE INFO NODIG: Beschrijf hier het wijnmaakproces - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.]</em></p>
+                <div class="nature-card">
+                    <div class="nature-icon"><i class="fas fa-feather-alt"></i></div>
+                    <h3>Vogels & kleine zoogdieren</h3>
+                    <p>
+                        Mezen, roodborstjes en andere vogels helpen ons bij de natuurlijke
+                        plaagbestrijding. Egels, hazen en reeën zijn vaste bezoekers van
+                        onze wijngaard en het omliggende landschap.
+                    </p>
                 </div>
-                <div class="process-card">
-                    <div class="process-icon">🍷</div>
-                    <h3>Rijping & Botteling</h3>
-                    <p><em>[NIEUWE INFO NODIG: Beschrijf hier het rijpings- en bottelproces - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.]</em></p>
-                </div>
-            </div>
-
-            <div class="wijngaard-info">
-                <div class="info-card">
-                    <h4>Druivenrassen</h4>
-                    <ul>
-                        <li>Pinot Noir</li>
-                        <li>Chardonnay</li>
-                        <li>Müller-Thurgau</li>
-                        <li><em>[NIEUWE INFO: Voeg overige rassen toe]</em></li>
-                    </ul>
-                </div>
-                <div class="info-card">
-                    <h4>De locatie</h4>
-                    <p>Wahlwiller, Zuid-Limburg<br>
-                    Gelegen op zuidelijke hellingen<br>
-                    Uniek microklimaat<br>
-                    <em>[NIEUWE INFO: Voeg oppervlakte toe in hectare]</em></p>
-                </div>
-                <div class="info-card">
-                    <h4>Certificeringen</h4>
-                    <p><em>[NIEUWE INFO NODIG: Voeg hier eventuele certificeringen of keurmerken toe - Lorem ipsum dolor sit amet consectetur.]</em></p>
+                <div class="nature-card">
+                    <div class="nature-icon"><i class="fas fa-water"></i></div>
+                    <h3>Water & landschap</h3>
+                    <p>
+                        De ligging in het Gulpdal zorgt voor een uniek microklimaat.
+                        Regenwater wordt natuurlijk opgevangen en de hellinggraad
+                        zorgt voor een perfecte drainage, zonder kunstmatige ingrepen.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ONZE WIJNEN -->
-    <section class="section" id="wijnen">
+    <!-- WIJNEN PREVIEW -->
+    <section class="section">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Ons assortiment</span>
                 <h2 class="section-title">Onze Wijnen</h2>
-                <p class="section-intro">Elke wijn vertelt het verhaal van onze wijngaard en het unieke Zuid-Limburgse terroir.</p>
+                <p class="section-intro">
+                    Elke fles vertelt het verhaal van onze wijngaard en het unieke Zuid-Limburgse terroir.
+                </p>
             </div>
-
             <div class="wine-grid">
-                <!-- Wijn 1 -->
                 <div class="wine-card">
                     <div class="wine-image">
-                        <div class="image-placeholder small">
-                            <i class="fas fa-wine-bottle"></i>
-                            <small>[Foto wijn 1]</small>
-                        </div>
+                        <img src="images/wijn-wit.jpg" alt="Witte wijn" class="wine-img"
+                             onerror="this.outerHTML='<div class=\'image-placeholder small\'><i class=\'fas fa-wine-bottle\'></i><small>images/wijn-wit.jpg</small></div>'">
                         <div class="wine-badge">Wit</div>
                     </div>
                     <div class="wine-info">
                         <h3>[Naam Witte Wijn]</h3>
                         <p class="wine-type">Droge witte wijn</p>
-                        <p><em>[NIEUWE INFO NODIG: Voeg hier de beschrijving van de wijn toe, smaakprofiel, aroma's etc. - Lorem ipsum dolor sit amet, consectetur adipiscing elit.]</em></p>
-                        <div class="wine-details">
-                            <span><i class="fas fa-thermometer-half"></i> Serveertemperatuur: [X]°C</span>
-                            <span><i class="fas fa-percent"></i> Alcohol: [X]%</span>
-                        </div>
-                        <p class="wine-price"><em>[Prijs op aanvraag / €XX,XX]</em></p>
+                        <p>Fris en elegant, met aroma's van citrus en witte bloemen.
+                           Een perfecte weerspiegeling van ons Zuid-Limburgse terroir.</p>
                     </div>
                 </div>
-
-                <!-- Wijn 2 -->
                 <div class="wine-card">
                     <div class="wine-image">
-                        <div class="image-placeholder small">
-                            <i class="fas fa-wine-bottle"></i>
-                            <small>[Foto wijn 2]</small>
-                        </div>
+                        <img src="images/wijn-rood.jpg" alt="Rode wijn" class="wine-img"
+                             onerror="this.outerHTML='<div class=\'image-placeholder small\'><i class=\'fas fa-wine-bottle\'></i><small>images/wijn-rood.jpg</small></div>'">
                         <div class="wine-badge red">Rood</div>
                     </div>
                     <div class="wine-info">
                         <h3>[Naam Rode Wijn]</h3>
                         <p class="wine-type">Droge rode wijn</p>
-                        <p><em>[NIEUWE INFO NODIG: Voeg hier de beschrijving van de wijn toe, smaakprofiel, aroma's etc. - Lorem ipsum dolor sit amet, consectetur adipiscing elit.]</em></p>
-                        <div class="wine-details">
-                            <span><i class="fas fa-thermometer-half"></i> Serveertemperatuur: [X]°C</span>
-                            <span><i class="fas fa-percent"></i> Alcohol: [X]%</span>
-                        </div>
-                        <p class="wine-price"><em>[Prijs op aanvraag / €XX,XX]</em></p>
+                        <p>Vol en krachtig, met tonen van rijp fruit en een zachte afdronk.
+                           Gemaakt van druiven die langzaam rijpen op onze zonnige hellingen.</p>
                     </div>
                 </div>
-
-                <!-- Wijn 3 -->
                 <div class="wine-card">
                     <div class="wine-image">
-                        <div class="image-placeholder small">
-                            <i class="fas fa-wine-bottle"></i>
-                            <small>[Foto wijn 3]</small>
-                        </div>
+                        <img src="images/wijn-rose.jpg" alt="Rosé wijn" class="wine-img"
+                             onerror="this.outerHTML='<div class=\'image-placeholder small\'><i class=\'fas fa-wine-bottle\'></i><small>images/wijn-rose.jpg</small></div>'">
                         <div class="wine-badge rose">Rosé</div>
                     </div>
                     <div class="wine-info">
                         <h3>[Naam Rosé Wijn]</h3>
                         <p class="wine-type">Droge rosé</p>
-                        <p><em>[NIEUWE INFO NODIG: Voeg hier de beschrijving van de wijn toe, smaakprofiel, aroma's etc. - Lorem ipsum dolor sit amet, consectetur adipiscing elit.]</em></p>
-                        <div class="wine-details">
-                            <span><i class="fas fa-thermometer-half"></i> Serveertemperatuur: [X]°C</span>
-                            <span><i class="fas fa-percent"></i> Alcohol: [X]%</span>
-                        </div>
-                        <p class="wine-price"><em>[Prijs op aanvraag / €XX,XX]</em></p>
+                        <p>Licht en verfrissend, met een mooie roze kleur en aroma's
+                           van aardbeien en perzik. Ideaal voor warme zomerdagen.</p>
                     </div>
                 </div>
             </div>
-
-            <div class="wine-cta">
-                <p>Geïnteresseerd in onze wijnen? Neem contact met ons op voor beschikbaarheid en prijzen.</p>
-                <a href="#contact" class="btn btn-primary">Neem contact op</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- BEZOEK -->
-    <section class="section section-warm" id="bezoek">
-        <div class="container">
-            <div class="section-grid reverse">
-                <div class="section-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Foto rondleiding<br><small>[images/bezoek.jpg]</small></p>
-                    </div>
-                </div>
-                <div class="section-text">
-                    <span class="section-label">Kom langs</span>
-                    <h2 class="section-title">Bezoek de Wijngaard</h2>
-                    <p>Wil je meer weten over onze wijngaard en wijnmakerij? We verwelkomen bezoekers graag voor een rondleiding en proeverij.</p>
-
-                    <div class="visit-options">
-                        <div class="visit-option">
-                            <i class="fas fa-walking"></i>
-                            <div>
-                                <h4>Rondleiding</h4>
-                                <p><em>[NIEUWE INFO NODIG: Beschrijf de rondleiding, duur, wat is inbegrepen - Lorem ipsum dolor sit amet consectetur adipiscing elit.]</em></p>
-                            </div>
-                        </div>
-                        <div class="visit-option">
-                            <i class="fas fa-wine-glass-alt"></i>
-                            <div>
-                                <h4>Proeverij</h4>
-                                <p><em>[NIEUWE INFO NODIG: Beschrijf de proeverij, welke wijnen, prijs per persoon - Lorem ipsum dolor sit amet consectetur adipiscing elit.]</em></p>
-                            </div>
-                        </div>
-                        <div class="visit-option">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <h4>Groepen</h4>
-                                <p><em>[NIEUWE INFO NODIG: Beschrijf mogelijkheden voor groepen, minimum/maximum aantal personen - Lorem ipsum dolor sit amet consectetur.]</em></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="openingstijden">
-                        <h4><i class="fas fa-clock"></i> Openingstijden</h4>
-                        <table class="tijden-table">
-                            <tr>
-                                <td>Maandag - Vrijdag</td>
-                                <td><em>[NIEUWE INFO: tijden invullen]</em></td>
-                            </tr>
-                            <tr>
-                                <td>Zaterdag</td>
-                                <td><em>[NIEUWE INFO: tijden invullen]</em></td>
-                            </tr>
-                            <tr>
-                                <td>Zondag</td>
-                                <td><em>[NIEUWE INFO: tijden invullen]</em></td>
-                            </tr>
-                        </table>
-                        <p class="tijden-note"><i class="fas fa-info-circle"></i> Bezoek alleen op afspraak. Neem vooraf contact op.</p>
-                    </div>
-
-                    <a href="#contact" class="btn btn-primary">Maak een afspraak</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOTO GALERIJ -->
-    <section class="section" id="galerij">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Beelden</span>
-                <h2 class="section-title">Galerij</h2>
-                <p class="section-intro">Een kijkje in onze wijngaard door de seizoenen heen.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item large">
-                    <div class="image-placeholder gallery">
-                        <i class="fas fa-image"></i>
-                        <small>[images/galerij-1.jpg]</small>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder gallery">
-                        <i class="fas fa-image"></i>
-                        <small>[images/galerij-2.jpg]</small>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder gallery">
-                        <i class="fas fa-image"></i>
-                        <small>[images/galerij-3.jpg]</small>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder gallery">
-                        <i class="fas fa-image"></i>
-                        <small>[images/galerij-4.jpg]</small>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="image-placeholder gallery">
-                        <i class="fas fa-image"></i>
-                        <small>[images/galerij-5.jpg]</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section section-dark" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label light">Bereikbaarheid</span>
-                <h2 class="section-title light">Contact</h2>
-                <p class="section-intro light">Heeft u vragen of wilt u een bezoek plannen? Neem gerust contact met ons op.</p>
-            </div>
-
-            <div class="contact-grid">
-                <!-- Contactgegevens -->
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Adres</h4>
-                            <p>Wahlwillerweg [NUMMER]<br>
-                            6286 [POSTCODE] Wahlwiller<br>
-                            Zuid-Limburg, Nederland</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefoon</h4>
-                            <p><em>[NIEUWE INFO: Telefoonnummer toevoegen]</em></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>E-mail</h4>
-                            <p><a href="mailto:info@wijngoedwahlwiller.nl">info@wijngoedwahlwiller.nl</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-car"></i>
-                        <div>
-                            <h4>Bereikbaarheid</h4>
-                            <p><em>[NIEUWE INFO NODIG: Beschrijf hoe je de wijngaard kunt bereiken, parkeren etc. - Lorem ipsum dolor sit amet consectetur.]</em></p>
-                        </div>
-                    </div>
-
-                    <div class="social-links">
-                        <h4>Volg ons</h4>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contactformulier -->
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contact-form">
-                        <h3>Stuur ons een bericht</h3>
-                        <div class="form-group">
-                            <label for="naam">Naam *</label>
-                            <input type="text" id="naam" name="naam" placeholder="Uw volledige naam" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-mailadres *</label>
-                            <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefoon">Telefoonnummer</label>
-                            <input type="tel" id="telefoon" name="telefoon" placeholder="06 - XX XX XX XX">
-                        </div>
-                        <div class="form-group">
-                            <label for="onderwerp">Onderwerp *</label>
-                            <select id="onderwerp" name="onderwerp" required>
-                                <option value="">Selecteer een onderwerp</option>
-                                <option value="rondleiding">Rondleiding plannen</option>
-                                <option value="proeverij">Proeverij boeken</option>
-                                <option value="wijnen">Vraag over wijnen</option>
-                                <option value="groep">Groepsbezoek</option>
-                                <option value="anders">Anders</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="bericht">Bericht *</label>
-                            <textarea id="bericht" name="bericht" rows="5" placeholder="Uw bericht..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary full-width">
-                            <i class="fas fa-paper-plane"></i> Verstuur bericht
-                        </button>
-                        <p class="form-note">* Verplichte velden. Wij reageren binnen 2 werkdagen.</p>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Kaart -->
-            <div class="map-container">
-                <h3>Vind ons</h3>
-                <div class="map-wrapper">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7851.349027579787!2d5.916876427231021!3d50.81570549999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0968f8cc1f95f%3A0xe4558ca1c788a71e!2sWittemer%20Wijngaard!5e1!3m2!1snl!2snl!4v1776507447645!5m2!1snl!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        width="100%"
-                        height="450"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Locatie Wijngoed Wahlwiller">
-                    </iframe>
-                    <div class="map-info">
-                        <div class="map-info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Wahlwiller, Zuid-Limburg</span>
-                        </div>
-                        <div class="map-info-item">
-                            <i class="fas fa-car"></i>
-                            <span>Gratis parkeren aanwezig</span>
-                        </div>
-                        <div class="map-info-item">
-                            <i class="fas fa-train"></i>
-                            <span>[NIEUWE INFO: Beschrijf OV mogelijkheden]</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-cta">
+                <a href="pages/wijnen.html" class="btn btn-primary">Bekijk alle wijnen</a>
             </div>
         </div>
     </section>
@@ -529,30 +269,31 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <span class="logo-icon">🍷</span>
-                <span class="logo-text">Wijngoed Wahlwiller</span>
-                <p>Authentieke Nederlandse wijnen uit het hart van Zuid-Limburg.</p>
+                <img src="images/logo.png" alt="Logo" class="footer-logo"
+                     onerror="this.outerHTML='<span class=\'logo-icon\'>🍷</span>'">
+                <span class="logo-text">Wittemer Wijngaard</span>
+                <p>Authentieke wijnen uit het hart van Zuid-Limburg.</p>
             </div>
             <div class="footer-links">
                 <h4>Navigatie</h4>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#over-ons">Over Ons</a></li>
-                    <li><a href="#wijngaard">De Wijngaard</a></li>
-                    <li><a href="#wijnen">Onze Wijnen</a></li>
-                    <li><a href="#bezoek">Bezoek</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pages/over-ons.html">Over Ons</a></li>
+                    <li><a href="pages/wijngaard.html">De Wijngaard</a></li>
+                    <li><a href="pages/wijnen.html">Onze Wijnen</a></li>
+                                        <li><a href="pages/bezoek.html">Bezoek</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h4>Contact</h4>
                 <p><i class="fas fa-map-marker-alt"></i> Wahlwiller, Zuid-Limburg</p>
-                <p><i class="fas fa-envelope"></i> info@wijngoedwahlwiller.nl</p>
-                <p><i class="fas fa-phone"></i> <em>[Telefoonnummer]</em></p>
+                <p><i class="fas fa-envelope"></i> info@wittemerwijngaard.nl</p>
+                <p><i class="fas fa-phone"></i> [Telefoonnummer]</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2024 Wijngoed Wahlwiller. Alle rechten voorbehouden.</p>
+            <p>© 2024 Wittemer Wijngaard. Alle rechten voorbehouden.</p>
             <p>Alcoholhoudende dranken. Niet geschikt voor personen onder de 18 jaar.</p>
         </div>
     </footer>
