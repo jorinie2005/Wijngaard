@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezoek – Wittemer Wijngaard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: italic;
+            font-weight: 400;
+            src: url('../fonts/playfair-display-v40-latin-italic.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 300;
+            src: url('../fonts/lato-v25-latin-300.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            src: url('../fonts/lato-v25-latin-regular.woff2') format('woff2');
+        }
+        @font-face {
+            font-display: swap;
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            src: url('../fonts/lato-v25-latin-700.woff2') format('woff2');
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVIGATIE -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <div class="logo-img-wrapper">
+                    <img src="../images/logo.png" alt="Wittemer Wijngaard logo" class="logo-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="logo-fallback" style="display:none;">
+                        <span class="logo-icon">🍷</span>
+                        <span class="logo-text">Wittemer Wijngaard</span>
+                    </div>
+                </div>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="over-ons.html" class="nav-link">Over Ons</a></li>
+                <li><a href="wijngaard.html" class="nav-link">De Wijngaard</a></li>
+                <li><a href="wijnen.html" class="nav-link">Onze Wijnen</a></li>
+                <li><a href="bezoek.html" class="nav-link active">Bezoek</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGINA HEADER -->
+    <div class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="page-header-content">
+            <span class="section-label light">Kom langs</span>
+            <h1>Bezoek de Wijngaard</h1>
+        </div>
+    </div>
+
+    <!-- BEZOEK INTRO -->
+    <section class="section">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-text">
+                    <span class="section-label">Welkom</span>
+                    <h2 class="section-title">Wij verwelkomen u graag</h2>
+                    <p>
+                        Een bezoek aan de Wittemer Wijngaard is een unieke ervaring.
+                        U wandelt door de wijnstokken, ademt de frisse Limburgse lucht in
+                        en ontdekt hoe onze wijnen worden gemaakt. Van de eerste knop
+                        in het voorjaar tot de oogst in de herfst – de wijngaard heeft
+                        elk seizoen zijn eigen charme.
+                    </p>
+                    <p>
+                        Bezoek is uitsluitend mogelijk op afspraak. Zo kunnen wij u
+                        de aandacht geven die u verdient en zorgen voor een onvergetelijke
+                        ervaring.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">Maak een afspraak</a>
+                </div>
+                <div class="section-image">
+                    <img src="../images/bezoek.jpg" alt="Bezoek wijngaard" class="content-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-image\'></i><p>Foto bezoek<br><small>images/bezoek.jpg</small></p></div>'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEZOEK OPTIES -->
+    <section class="section section-warm">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Mogelijkheden</span>
+                <h2 class="section-title">Wat bieden wij aan?</h2>
+            </div>
+            <div class="visit-cards">
+                <div class="visit-card">
+                    <div class="visit-card-icon">
+                        <i class="fas fa-walking"></i>
+                    </div>
+                    <h3>Rondleiding</h3>
+                    <p>
+                        Ontdek onze wijngaard tijdens een begeleide rondleiding.
+                        U leert alles over de teelt van onze druiven, het wijnmaakproces
+                        en de geschiedenis van de wijngaard.
+                    </p>
+                    <ul class="visit-list">
+                        <li><i class="fas fa-check"></i> Duur: [X uur]</li>
+                        <li><i class="fas fa-check"></i> [NIEUWE INFO: prijs per persoon]</li>
+                        <li><i class="fas fa-check"></i> Inclusief proeverij van [X] wijnen</li>
+                        <li><i class="fas fa-check"></i> Alleen op afspraak</li>
+                    </ul>
+                </div>
+                <div class="visit-card">
+                    <div class="visit-card-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <h3>Wijnproeverij</h3>
+                    <p>
+                        Proef onze wijnen in een ontspannen sfeer, begeleid door
+                        een deskundige gastheer of gastvrouw die u alles vertelt
+                        over de smaken en achtergronden van elke wijn.
+                    </p>
+                    <ul class="visit-list">
+                        <li><i class="fas fa-check"></i> [NIEUWE INFO: aantal wijnen]</li>
+                        <li><i class="fas fa-check"></i> [NIEUWE INFO: prijs per persoon]</li>
+                        <li><i class="fas fa-check"></i> [NIEUWE INFO: inclusief/exclusief]</li>
+                        <li><i class="fas fa-check"></i> Alleen op afspraak</li>
+                    </ul>
+                </div>
+                <div class="visit-card">
+                    <div class="visit-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Groepsbezoek</h3>
+                    <p>
+                        Wij verwelkomen ook groepen voor een bijzondere dag uit.
+                        Of het nu gaat om een bedrijfsuitje, een familiefeest of
+                        een andere gelegenheid – wij zorgen voor een onvergetelijke ervaring.
+                    </p>
+                    <ul class="visit-list">
+                        <li><i class="fas fa-check"></i> [NIEUWE INFO: min/max personen]</li>
+                        <li><i class="fas fa-check"></i> [NIEUWE INFO: prijs per groep]</li>
+                        <li><i class="fas fa-check"></i> Maatwerk mogelijk</li>
+                        <li><i class="fas fa-check"></i> Alleen op afspraak</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPENINGSTIJDEN -->
+    <section class="section">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-text">
+                    <span class="section-label">Planning</span>
+                    <h2 class="section-title">Openingstijden</h2>
+                    <p>
+                        De wijngaard is uitsluitend toegankelijk op afspraak.
+                        Neem contact met ons op om een bezoek in te plannen.
+                        Wij zijn flexibel en denken graag met u mee.
+                    </p>
+                    <div class="openingstijden">
+                        <table class="tijden-table">
+                            <tr>
+                                <td><i class="fas fa-calendar-day"></i> Maandag – Vrijdag</td>
+                                <td>[NIEUWE INFO: tijden]</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-calendar-day"></i> Zaterdag</td>
+                                <td>[NIEUWE INFO: tijden]</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-calendar-day"></i> Zondag</td>
+                                <td>[NIEUWE INFO: tijden]</td>
+                            </tr>
+                        </table>
+                        <p class="tijden-note">
+                            <i class="fas fa-info-circle"></i>
+                            Tijdens de oogstperiode (september – oktober) kunnen de tijden afwijken.
+                        </p>
+                    </div>
+                    <a href="contact.html" class="btn btn-outline">Neem contact op</a>
+                </div>
+                <div class="section-image">
+                    <img src="../images/openingstijden.jpg" alt="Wijngaard sfeer" class="content-img"
+                         onerror="this.outerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-image\'></i><p>Foto sfeer<br><small>images/openingstijden.jpg</small></p></div>'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="../images/logo.png" alt="Logo" class="footer-logo"
+                     onerror="this.outerHTML='<span class=\'logo-icon\'>🍷</span>'">
+                <span class="logo-text">Wittemer Wijngaard</span>
+                <p>Authentieke wijnen uit het hart van Zuid-Limburg.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigatie</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="over-ons.html">Over Ons</a></li>
+                    <li><a href="wijngaard.html">De Wijngaard</a></li>
+                    <li><a href="wijnen.html">Onze Wijnen</a></li>
+                    <li><a href="bezoek.html">Bezoek</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p                ><i class="fas fa-map-marker-alt"></i> Wahlwiller, Zuid-Limburg</p>
+                <p><i class="fas fa-envelope"></i> info@wittemerwijngaard.nl</p>
+                <p><i class="fas fa-phone"></i> [Telefoonnummer]</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Wittemer Wijngaard. Alle rechten voorbehouden.</p>
+            <p>Alcoholhoudende dranken. Niet geschikt voor personen onder de 18 jaar.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

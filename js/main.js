@@ -1,66 +1,73 @@
 /* ================================
-   NAVIGATIE - SCROLL EFFECT
+   NAVIGATIE – SCROLL EFFECT
 ================================ */
 const navbar = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-    updateActiveLink();
-});
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        updateActiveLink();
+    });
+}
 
 /* ================================
    HAMBURGER MENU
 ================================ */
 const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+const navMenu   = document.getElementById('nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    document.body.style.overflow = 
-        navMenu.classList.contains('active') ? 'hidden' : '';
-});
+if (hamburger && navMenu) {
 
-// Sluit menu bij klikken op link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.style.overflow =
+            navMenu.classList.contains('active') ? 'hidden' : '';
     });
-});
 
-// Sluit menu bij klikken buiten menu
-document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
+    /* Sluit menu bij klikken op link */
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+
+    /* Sluit menu bij klikken buiten menu */
+    document.addEventListener('click', (e) => {
+        if (navbar && !navbar.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
 
 /* ================================
    ACTIEVE NAVIGATIE LINK
+   (alleen op homepage met anchors)
 ================================ */
 function updateActiveLink() {
     const sections = document.querySelectorAll('section[id]');
-    const scrollPosition = window.scrollY + 100;
+    if (sections.length === 0) return;
+
+    const scrollPosition = window.scrollY + 120;
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
+        const sectionTop    = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        const correspondingLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+        const sectionId     = section.getAttribute('id');
+        const link = document.querySelector(`.nav-link[href="#${sectionId}"]`);
 
-        if (correspondingLink) {
+        if (link) {
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                correspondingLink.classList.add('active');
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
             }
         }
     });
@@ -70,128 +77,55 @@ function updateActiveLink() {
    SCROLL ANIMATIES
 ================================ */
 const observerOptions = {
-    threshold: 0.1,          /* Eerder starten */
-    rootMargin: '0px 0px -30px 0px'  /* Minder wachten */
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            /* Geen delay meer via JS */
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-/* Voeg animaties toe aan elementen */
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll(`
-        .process-card,
-        .wine-card,
-        .info-card,
-        .visit-option,
-        .contact-item,
-        .gallery-item,
-        .section-text,
-        .section-image,
-        .intro-item
-    `);
 
-    animateElements.forEach((el) => {
+    /* Elementen die animeren bij scrollen */
+    const animateSelectors = [
+        '.nature-card',
+        '.wine-card',
+        '.wine-detail-card',
+        '.druif-card',
+        '.process-card',
+        '.visit-card',
+        '.contact-card',
+        '.gallery-item',
+        '.section-text',
+        '.section-image',
+        '.intro-item',
+        '.bereikbaarheid-item'
+    ].join(', ');
+
+    document.querySelectorAll(animateSelectors).forEach(el => {
         el.classList.add('fade-in');
-        /* Verwijder de index * 0.08s delay */
-        /* Delay wordt nu via CSS gedaan */
         observer.observe(el);
     });
 });
 
 /* ================================
-   CONTACTFORMULIER
-================================ */
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Haal formulierwaarden op
-    const naam = document.getElementById('naam').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const onderwerp = document.getElementById('onderwerp').value;
-    const bericht = document.getElementById('bericht').value.trim();
-
-    // Validatie
-    if (!naam || !email || !onderwerp || !bericht) {
-        showNotification('Vul alle verplichte velden in.', 'error');
-        return;
-    }
-
-    if (!isValidEmail(email)) {
-        showNotification('Vul een geldig e-mailadres in.', 'error');
-        return;
-    }
-
-    // Simuleer verzending
-    // [NIEUWE INFO NODIG: Koppel hier een echte mail service aan
-    // zoals Formspree, EmailJS of een eigen backend]
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Versturen...';
-    submitBtn.disabled = true;
-
-    setTimeout(() => {
-        showNotification('Bedankt voor uw bericht! We nemen zo snel mogelijk contact op.', 'success');
-        contactForm.reset();
-        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Verstuur bericht';
-        submitBtn.disabled = false;
-    }, 1500);
-});
-
-/* ================================
-   EMAIL VALIDATIE
-================================ */
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
-/* ================================
-   NOTIFICATIE SYSTEEM
-================================ */
-function showNotification(message, type) {
-    // Verwijder bestaande notificaties
-    const existing = document.querySelector('.notification');
-    if (existing) existing.remove();
-
-    const notification = document.createElement('div');
-    notification.classList.add('notification', type);
-    notification.innerHTML = `
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-        <span>${message}</span>
-        <button onclick="this.parentElement.remove()">
-            <i class="fas fa-times"></i>
-        </button>
-    `;
-
-    document.body.appendChild(notification);
-
-    // Automatisch verwijderen na 5 seconden
-    setTimeout(() => {
-        if (notification.parentElement) {
-            notification.classList.add('fade-out');
-            setTimeout(() => notification.remove(), 300);
-        }
-    }, 5000);
-}
-
-/* ================================
-   SMOOTH SCROLL VOOR ALLE LINKS
+   SMOOTH SCROLL
+   (alleen voor anchor links op homepage)
 ================================ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
+        const targetId = anchor.getAttribute('href');
+        const target   = document.querySelector(targetId);
+
         if (target) {
-            const navHeight = navbar.offsetHeight;
+            e.preventDefault();
+            const navHeight      = navbar ? navbar.offsetHeight : 0;
             const targetPosition = target.offsetTop - navHeight;
             window.scrollTo({
                 top: targetPosition,
@@ -204,37 +138,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* ================================
    GALERIJ LIGHTBOX
 ================================ */
-const galleryItems = document.querySelectorAll('.gallery-item');
-
-galleryItems.forEach(item => {
+document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', () => {
-        const placeholder = item.querySelector('.image-placeholder small');
-        const imagePath = placeholder ? placeholder.textContent : '';
 
+        /* Probeer echte afbeelding te pakken */
+        const realImg = item.querySelector('.gallery-img');
+        const src     = realImg ? realImg.src : null;
+        const alt     = realImg ? realImg.alt : 'Afbeelding';
+
+        /* Maak lightbox aan */
         const lightbox = document.createElement('div');
         lightbox.classList.add('lightbox');
-        lightbox.innerHTML = `
-            <div class="lightbox-overlay"></div>
-            <div class="lightbox-content">
-                <button class="lightbox-close">
-                    <i class="fas fa-times"></i>
-                </button>
-                <div class="lightbox-image">
-                    <i class="fas fa-image"></i>
-                    <p>${imagePath}</p>
+
+        if (src && !src.includes('undefined')) {
+            lightbox.innerHTML = `
+                <div class="lightbox-overlay"></div>
+                <div class="lightbox-content">
+                    <button class="lightbox-close" aria-label="Sluiten">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <img src="${src}" alt="${alt}" class="lightbox-img-real">
                 </div>
-            </div>
-        `;
+            `;
+        } else {
+            /* Fallback als er geen echte afbeelding is */
+            const placeholder = item.querySelector('small');
+            const label = placeholder ? placeholder.textContent : 'Afbeelding';
+            lightbox.innerHTML = `
+                <div class="lightbox-overlay"></div>
+                <div class="lightbox-content">
+                    <button class="lightbox-close" aria-label="Sluiten">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="lightbox-image">
+                        <i class="fas fa-image"></i>
+                        <p>${label}</p>
+                    </div>
+                </div>
+            `;
+        }
 
         document.body.appendChild(lightbox);
         document.body.style.overflow = 'hidden';
 
+        /* Activeer met kleine vertraging voor animatie */
         setTimeout(() => lightbox.classList.add('active'), 10);
 
-        // Sluit lightbox
-        lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-        lightbox.querySelector('.lightbox-overlay').addEventListener('click', closeLightbox);
-
+        /* Sluitfuncties */
         function closeLightbox() {
             lightbox.classList.remove('active');
             setTimeout(() => {
@@ -243,9 +193,46 @@ galleryItems.forEach(item => {
             }, 300);
         }
 
-        // Sluit met escape toets
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
+        lightbox.querySelector('.lightbox-close')
+            .addEventListener('click', closeLightbox);
+        lightbox.querySelector('.lightbox-overlay')
+            .addEventListener('click', closeLightbox);
+
+        /* Sluit met Escape toets */
+        function handleKeydown(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                document.removeEventListener('keydown', handleKeydown);
+            }
+        }
+        document.addEventListener('keydown', handleKeydown);
     });
 });
+
+/* ================================
+   NOTIFICATIE SYSTEEM
+   (herbruikbaar voor toekomstige functies)
+================================ */
+function showNotification(message, type = 'success') {
+    const existing = document.querySelector('.notification');
+    if (existing) existing.remove();
+
+    const notification = document.createElement('div');
+    notification.classList.add('notification', type);
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+        <button onclick="this.parentElement.remove()" aria-label="Sluiten">
+            <i class="fas fa-times"></i>
+        </button>
+    `;
+
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.classList.add('fade-out');
+            setTimeout(() => notification.remove(), 300);
+        }
+    }, 5000);
+}
