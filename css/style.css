@@ -546,6 +546,13 @@ p {
     position: relative;
 }
 
+.content-img.img-full {
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: 45% 55%;
+}
+
 /* ================================
    IMAGE PLACEHOLDER (fallback)
 ================================ */
