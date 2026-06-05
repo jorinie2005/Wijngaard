@@ -1,261 +1,232 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bezoek – Wittemer Wijngaard</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Community - Wijngaard</title>
     <style>
-        @font-face {
-            font-display: swap;
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 400;
-            src: url('../fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        @font-face {
-            font-display: swap;
-            font-family: 'Playfair Display';
-            font-style: italic;
-            font-weight: 400;
-            src: url('../fonts/playfair-display-v40-latin-italic.woff2') format('woff2');
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
         }
-        @font-face {
-            font-display: swap;
-            font-family: 'Playfair Display';
-            font-style: normal;
-            font-weight: 700;
-            src: url('../fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        @font-face {
-            font-display: swap;
-            font-family: 'Lato';
-            font-style: normal;
-            font-weight: 300;
-            src: url('../fonts/lato-v25-latin-300.woff2') format('woff2');
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
         }
-        @font-face {
-            font-display: swap;
-            font-family: 'Lato';
-            font-style: normal;
-            font-weight: 400;
-            src: url('../fonts/lato-v25-latin-regular.woff2') format('woff2');
+        
+        nav {
+            background-color: #34495e;
+            padding: 15px 0;
+            text-align: center;
         }
-        @font-face {
-            font-display: swap;
-            font-family: 'Lato';
-            font-style: normal;
-            font-weight: 700;
-            src: url('../fonts/lato-v25-latin-700.woff2') format('woff2');
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .community-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .community-header h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .community-header p {
+            font-size: 1.1em;
+            color: #7f8c8d;
+        }
+        
+        .community-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .section-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .section-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .section-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .members-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .members-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .member-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .member-card {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .member-card strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .member-card p {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- NAVIGATIE -->
-    <nav class="navbar scrolled" id="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <div class="logo-img-wrapper">
-                    <img src="../images/logo.png" alt="Wittemer Wijngaard logo" class="logo-img"
-                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="logo-fallback" style="display:none;">
-                        <span class="logo-icon">🍷</span>
-                        <span class="logo-text">Wittemer Wijngaard</span>
-                    </div>
-                </div>
-            </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="../index.html" class="nav-link">Home</a></li>
-                <li><a href="over-ons.html" class="nav-link">Over Ons</a></li>
-                <li><a href="wijngaard.html" class="nav-link">De Wijngaard</a></li>
-                <li><a href="wijnen.html" class="nav-link">Onze Wijnen</a></li>
-                <li><a href="bezoek.html" class="nav-link active">Bezoek</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
+    <header>
+        <h1>Wijngaard</h1>
+        <p>Community Hub</p>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="community.html">Community</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    
+    <div class="container">
+        <div class="community-header">
+            <h2>Welcome to Our Community</h2>
+            <p>Join us in building a vibrant and inclusive community</p>
+        </div>
+        
+        <div class="community-sections">
+            <div class="section-card">
+                <h3>🤝 Get Involved</h3>
+                <p>Connect with members, share ideas, and contribute to our growing community. Whether you're a beginner or an expert, there's a place for you here.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            
+            <div class="section-card">
+                <h3>💬 Forums</h3>
+                <p>Join our discussion forums to ask questions, share knowledge, and stay updated with the latest community news and events.</p>
+                <a href="#" class="btn">Visit Forums</a>
+            </div>
+            
+            <div class="section-card">
+                <h3>📅 Events</h3>
+                <p>Participate in our regular meetups, webinars, and workshops designed to bring our community together and foster learning.</p>
+                <a href="#" class="btn">See Events</a>
             </div>
         </div>
-    </nav>
-
-    <!-- PAGINA HEADER -->
-    <div class="page-header">
-        <div class="page-header-overlay"></div>
-        <div class="page-header-content">
-            <span class="section-label light">Kom langs</span>
-            <h1>Bezoek de Wijngaard</h1>
+        
+        <div class="members-section">
+            <h3>Community Members</h3>
+            <div class="member-list">
+                <div class="member-card">
+                    <strong>Alex Johnson</strong>
+                    <p>Community Lead</p>
+                </div>
+                <div class="member-card">
+                    <strong>Sarah Smith</strong>
+                    <p>Moderator</p>
+                </div>
+                <div class="member-card">
+                    <strong>Mike Wilson</strong>
+                    <p>Contributor</p>
+                </div>
+                <div class="member-card">
+                    <strong>Emma Davis</strong>
+                    <p>Contributor</p>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- BEZOEK INTRO -->
-    <section class="section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-text">
-                    <span class="section-label">Welkom</span>
-                    <h2 class="section-title">Wij verwelkomen u graag</h2>
-                    <p>
-                        Een bezoek aan de Wittemer Wijngaard is een unieke ervaring.
-                        U wandelt door de wijnstokken, ademt de frisse Limburgse lucht in
-                        en ontdekt hoe onze wijnen worden gemaakt. Van de eerste knop
-                        in het voorjaar tot de oogst in de herfst – de wijngaard heeft
-                        elk seizoen zijn eigen charme.
-                    </p>
-                    <p>
-                        Bezoek is uitsluitend mogelijk op afspraak. Zo kunnen wij u
-                        de aandacht geven die u verdient en zorgen voor een onvergetelijke
-                        ervaring.
-                    </p>
-                    <a href="contact.html" class="btn btn-primary">Maak een afspraak</a>
-                </div>
-                <div class="section-image">
-                    <img src="../images/rondleiding 2.jpeg" alt="Bezoek wijngaard" class="content-img"
-                         onerror="this.outerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-image\'></i><p>Foto bezoek<br><small>images/bezoek.jpg</small></p></div>'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BEZOEK OPTIES -->
-    <section class="section section-warm">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Mogelijkheden</span>
-                <h2 class="section-title">Wat bieden wij aan?</h2>
-            </div>
-            <div class="visit-cards">
-                <div class="visit-card">
-                    <div class="visit-card-icon">
-                        <i class="fas fa-walking"></i>
-                    </div>
-                    <h3>Rondleiding</h3>
-                    <p>
-                        Ontdek onze wijngaard tijdens een begeleide rondleiding.
-                        U leert alles over de teelt van onze druiven, het wijnmaakproces
-                        en de geschiedenis van de wijngaard.
-                    </p>
-                    <ul class="visit-list">
-                        <li><i class="fas fa-check"></i> Duur: [X uur]</li>
-                        <li><i class="fas fa-check"></i> [NIEUWE INFO: prijs per persoon]</li>
-                        <li><i class="fas fa-check"></i> Inclusief proeverij van [X] wijnen</li>
-                        <li><i class="fas fa-check"></i> Alleen op afspraak</li>
-                    </ul>
-                </div>
-                <div class="visit-card">
-                    <div class="visit-card-icon">
-                        <i class="fas fa-wine-glass-alt"></i>
-                    </div>
-                    <h3>Wijnproeverij</h3>
-                    <p>
-                        Proef onze wijnen in een ontspannen sfeer, begeleid door
-                        een deskundige gastheer of gastvrouw die u alles vertelt
-                        over de smaken en achtergronden van elke wijn.
-                    </p>
-                    <ul class="visit-list">
-                        <li><i class="fas fa-check"></i> [NIEUWE INFO: aantal wijnen]</li>
-                        <li><i class="fas fa-check"></i> [NIEUWE INFO: prijs per persoon]</li>
-                        <li><i class="fas fa-check"></i> [NIEUWE INFO: inclusief/exclusief]</li>
-                        <li><i class="fas fa-check"></i> Alleen op afspraak</li>
-                    </ul>
-                </div>
-                <div class="visit-card">
-                    <div class="visit-card-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Groepsbezoek</h3>
-                    <p>
-                        Wij verwelkomen ook groepen voor een bijzondere dag uit.
-                        Of het nu gaat om een bedrijfsuitje, een familiefeest of
-                        een andere gelegenheid – wij zorgen voor een onvergetelijke ervaring.
-                    </p>
-                    <ul class="visit-list">
-                        <li><i class="fas fa-check"></i> [NIEUWE INFO: min/max personen]</li>
-                        <li><i class="fas fa-check"></i> [NIEUWE INFO: prijs per groep]</li>
-                        <li><i class="fas fa-check"></i> Maatwerk mogelijk</li>
-                        <li><i class="fas fa-check"></i> Alleen op afspraak</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OPENINGSTIJDEN -->
-    <section class="section">
-        <div class="container">
-            <div class="section-grid">
-                <div class="section-text">
-                    <span class="section-label">Planning</span>
-                    <h2 class="section-title">Openingstijden</h2>
-                    <p>
-                        De wijngaard is uitsluitend toegankelijk op afspraak.
-                        Neem contact met ons op om een bezoek in te plannen.
-                        Wij zijn flexibel en denken graag met u mee.
-                    </p>
-                    <div class="openingstijden">
-                        <table class="tijden-table">
-                            <tr>
-                                <td><i class="fas fa-calendar-day"></i> Maandag – Vrijdag</td>
-                                <td>[NIEUWE INFO: tijden]</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-calendar-day"></i> Zaterdag</td>
-                                <td>[NIEUWE INFO: tijden]</td>
-                            </tr>
-                            <tr>
-                                <td><i class="fas fa-calendar-day"></i> Zondag</td>
-                                <td>[NIEUWE INFO: tijden]</td>
-                            </tr>
-                        </table>
-                        <p class="tijden-note">
-                            <i class="fas fa-info-circle"></i>
-                            Tijdens de oogstperiode (september – oktober) kunnen de tijden afwijken.
-                        </p>
-                    </div>
-                    <a href="contact.html" class="btn btn-outline">Neem contact op</a>
-                </div>
-                <div class="section-image">
-                    <img src="../images/rondleiding 4.jpeg" alt="Wijngaard sfeer" class="content-img"
-                         onerror="this.outerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-image\'></i><p>Foto sfeer<br><small>images/openingstijden.jpg</small></p></div>'">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="../images/logo.png" alt="Logo" class="footer-logo"
-                     onerror="this.outerHTML='<span class=\'logo-icon\'>🍷</span>'">
-                <span class="logo-text">Wittemer Wijngaard</span>
-                <p>Authentieke wijnen uit het hart van Zuid-Limburg.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Navigatie</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="over-ons.html">Over Ons</a></li>
-                    <li><a href="wijngaard.html">De Wijngaard</a></li>
-                    <li><a href="wijnen.html">Onze Wijnen</a></li>
-                    <li><a href="bezoek.html">Bezoek</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Contact</h4>
-                <p                ><i class="fas fa-map-marker-alt"></i> Wahlwiller, Zuid-Limburg</p>
-                <p><i class="fas fa-envelope"></i> info@wittemerwijngaard.nl</p>
-                <p><i class="fas fa-phone"></i> [Telefoonnummer]</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2024 Wittemer Wijngaard. Alle rechten voorbehouden.</p>
-            <p>Alcoholhoudende dranken. Niet geschikt voor personen onder de 18 jaar.</p>
-        </div>
+    
+    <footer>
+        <p>&copy; 2024 Wijngaard Community. All rights reserved.</p>
     </footer>
-
-    <script src="../js/main.js"></script>
 </body>
 </html>
